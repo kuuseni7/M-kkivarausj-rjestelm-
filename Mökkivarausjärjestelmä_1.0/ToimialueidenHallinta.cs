@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mökkivarausjärjestelmä_1._0
 {
-    public partial class VaraustenHallinta : Form
+    public partial class ToimialueidenHallinta : Form
     {
-        public VaraustenHallinta()
+        public ToimialueidenHallinta()
         {
             InitializeComponent();
         }

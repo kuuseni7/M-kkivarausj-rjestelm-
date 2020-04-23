@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlVarausLomake = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,42 +49,12 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pnlVarausLomake.SuspendLayout();
+            this.pnlVarausLomake = new System.Windows.Forms.Panel();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pnlVarausLomake.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlVarausLomake
-            // 
-            this.pnlVarausLomake.Controls.Add(this.textBox7);
-            this.pnlVarausLomake.Controls.Add(this.label7);
-            this.pnlVarausLomake.Controls.Add(this.label6);
-            this.pnlVarausLomake.Controls.Add(this.label5);
-            this.pnlVarausLomake.Controls.Add(this.label4);
-            this.pnlVarausLomake.Controls.Add(this.label3);
-            this.pnlVarausLomake.Controls.Add(this.label2);
-            this.pnlVarausLomake.Controls.Add(this.label1);
-            this.pnlVarausLomake.Controls.Add(this.textBox6);
-            this.pnlVarausLomake.Controls.Add(this.textBox5);
-            this.pnlVarausLomake.Controls.Add(this.textBox4);
-            this.pnlVarausLomake.Controls.Add(this.textBox3);
-            this.pnlVarausLomake.Controls.Add(this.textBox2);
-            this.pnlVarausLomake.Controls.Add(this.textBox1);
-            this.pnlVarausLomake.Controls.Add(this.button2);
-            this.pnlVarausLomake.Controls.Add(this.comboBox2);
-            this.pnlVarausLomake.Controls.Add(this.dataGridView1);
-            this.pnlVarausLomake.Controls.Add(this.dateTimePicker2);
-            this.pnlVarausLomake.Controls.Add(this.dateTimePicker1);
-            this.pnlVarausLomake.Controls.Add(this.button1);
-            this.pnlVarausLomake.Controls.Add(this.checkedListBox2);
-            this.pnlVarausLomake.Controls.Add(this.checkedListBox1);
-            this.pnlVarausLomake.Controls.Add(this.comboBox1);
-            this.pnlVarausLomake.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlVarausLomake.Location = new System.Drawing.Point(0, 0);
-            this.pnlVarausLomake.Name = "pnlVarausLomake";
-            this.pnlVarausLomake.Size = new System.Drawing.Size(800, 450);
-            this.pnlVarausLomake.TabIndex = 0;
             // 
             // textBox7
             // 
@@ -255,14 +224,6 @@
             this.checkedListBox2.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox2.TabIndex = 27;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(337, 318);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 26;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -270,6 +231,45 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 25;
+            // 
+            // pnlVarausLomake
+            // 
+            this.pnlVarausLomake.Controls.Add(this.textBox7);
+            this.pnlVarausLomake.Controls.Add(this.label7);
+            this.pnlVarausLomake.Controls.Add(this.label6);
+            this.pnlVarausLomake.Controls.Add(this.label5);
+            this.pnlVarausLomake.Controls.Add(this.label4);
+            this.pnlVarausLomake.Controls.Add(this.label3);
+            this.pnlVarausLomake.Controls.Add(this.label2);
+            this.pnlVarausLomake.Controls.Add(this.label1);
+            this.pnlVarausLomake.Controls.Add(this.textBox6);
+            this.pnlVarausLomake.Controls.Add(this.textBox5);
+            this.pnlVarausLomake.Controls.Add(this.textBox4);
+            this.pnlVarausLomake.Controls.Add(this.textBox3);
+            this.pnlVarausLomake.Controls.Add(this.textBox2);
+            this.pnlVarausLomake.Controls.Add(this.textBox1);
+            this.pnlVarausLomake.Controls.Add(this.button2);
+            this.pnlVarausLomake.Controls.Add(this.comboBox2);
+            this.pnlVarausLomake.Controls.Add(this.dataGridView1);
+            this.pnlVarausLomake.Controls.Add(this.dateTimePicker2);
+            this.pnlVarausLomake.Controls.Add(this.dateTimePicker1);
+            this.pnlVarausLomake.Controls.Add(this.button1);
+            this.pnlVarausLomake.Controls.Add(this.checkedListBox2);
+            this.pnlVarausLomake.Controls.Add(this.checkedListBox1);
+            this.pnlVarausLomake.Controls.Add(this.comboBox1);
+            this.pnlVarausLomake.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVarausLomake.Location = new System.Drawing.Point(0, 0);
+            this.pnlVarausLomake.Name = "pnlVarausLomake";
+            this.pnlVarausLomake.Size = new System.Drawing.Size(800, 450);
+            this.pnlVarausLomake.TabIndex = 1;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(425, 296);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 26;
             // 
             // VarausLomake
             // 
@@ -279,16 +279,15 @@
             this.Controls.Add(this.pnlVarausLomake);
             this.Name = "VarausLomake";
             this.Text = "VarausLomake";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlVarausLomake.ResumeLayout(false);
             this.pnlVarausLomake.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlVarausLomake;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -310,7 +309,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel pnlVarausLomake;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

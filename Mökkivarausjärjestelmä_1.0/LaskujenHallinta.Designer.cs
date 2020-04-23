@@ -1,4 +1,4 @@
-﻿namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
+﻿namespace Mökkivarausjärjestelmä_1._0
 {
     partial class LaskujenHallinta
     {

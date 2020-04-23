@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
+namespace Mökkivarausjärjestelmä_1._0
 {
-    public partial class LaskujenHallinta : Form
+    public partial class VarausteHallinta : Form
     {
-        public LaskujenHallinta()
+        public VarausteHallinta()
         {
             InitializeComponent();
         }
