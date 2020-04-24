@@ -49,7 +49,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlVarausLomake = new System.Windows.Forms.Panel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -188,9 +187,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(94, 140);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 135);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(363, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(474, 177);
             this.dataGridView1.TabIndex = 31;
             // 
             // dateTimePicker2
@@ -219,18 +218,10 @@
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(94, 318);
+            this.checkedListBox2.Location = new System.Drawing.Point(24, 330);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox2.TabIndex = 27;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 25;
             // 
             // pnlVarausLomake
             // 
@@ -256,7 +247,6 @@
             this.pnlVarausLomake.Controls.Add(this.button1);
             this.pnlVarausLomake.Controls.Add(this.checkedListBox2);
             this.pnlVarausLomake.Controls.Add(this.checkedListBox1);
-            this.pnlVarausLomake.Controls.Add(this.comboBox1);
             this.pnlVarausLomake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVarausLomake.Location = new System.Drawing.Point(0, 0);
             this.pnlVarausLomake.Name = "pnlVarausLomake";
@@ -266,7 +256,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(425, 296);
+            this.checkedListBox1.Location = new System.Drawing.Point(248, 330);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox1.TabIndex = 26;
@@ -309,7 +299,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel pnlVarausLomake;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
