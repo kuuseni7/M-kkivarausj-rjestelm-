@@ -154,6 +154,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VillageNewbiesDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Lomakkeet\Päävalikko.resx">
+      <DependentUpon>Päävalikko.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\ToimialueidenHallinta.resx">
       <DependentUpon>ToimialueidenHallinta.cs</DependentUpon>
     </EmbeddedResource>
