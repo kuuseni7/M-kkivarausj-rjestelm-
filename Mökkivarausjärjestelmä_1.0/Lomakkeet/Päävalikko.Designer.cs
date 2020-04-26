@@ -32,7 +32,6 @@
             this.lbOtsikko = new System.Windows.Forms.Label();
             this.lbOtsikko2 = new System.Windows.Forms.Label();
             this.btnToimialue = new System.Windows.Forms.Button();
-            this.btnPalvelut = new System.Windows.Forms.Button();
             this.btnVaraukset = new System.Windows.Forms.Button();
             this.btnAsiakkaat = new System.Windows.Forms.Button();
             this.btnSulje = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             this.panelPäävalikko.Controls.Add(this.btnSulje);
             this.panelPäävalikko.Controls.Add(this.btnAsiakkaat);
             this.panelPäävalikko.Controls.Add(this.btnVaraukset);
-            this.panelPäävalikko.Controls.Add(this.btnPalvelut);
             this.panelPäävalikko.Controls.Add(this.btnToimialue);
             this.panelPäävalikko.Controls.Add(this.lbOtsikko2);
             this.panelPäävalikko.Controls.Add(this.lbOtsikko);
@@ -82,39 +80,33 @@
             // 
             // btnToimialue
             // 
-            this.btnToimialue.Location = new System.Drawing.Point(177, 377);
+            this.btnToimialue.Location = new System.Drawing.Point(232, 364);
             this.btnToimialue.Name = "btnToimialue";
             this.btnToimialue.Size = new System.Drawing.Size(104, 23);
             this.btnToimialue.TabIndex = 2;
             this.btnToimialue.Text = "Toimialueet";
             this.btnToimialue.UseVisualStyleBackColor = true;
-            // 
-            // btnPalvelut
-            // 
-            this.btnPalvelut.Location = new System.Drawing.Point(288, 377);
-            this.btnPalvelut.Name = "btnPalvelut";
-            this.btnPalvelut.Size = new System.Drawing.Size(104, 23);
-            this.btnPalvelut.TabIndex = 3;
-            this.btnPalvelut.Text = "Palvelut";
-            this.btnPalvelut.UseVisualStyleBackColor = true;
+            this.btnToimialue.Click += new System.EventHandler(this.btnToimialue_Click);
             // 
             // btnVaraukset
             // 
-            this.btnVaraukset.Location = new System.Drawing.Point(177, 406);
+            this.btnVaraukset.Location = new System.Drawing.Point(232, 393);
             this.btnVaraukset.Name = "btnVaraukset";
             this.btnVaraukset.Size = new System.Drawing.Size(104, 23);
             this.btnVaraukset.TabIndex = 4;
             this.btnVaraukset.Text = "Varaukset";
             this.btnVaraukset.UseVisualStyleBackColor = true;
+            this.btnVaraukset.Click += new System.EventHandler(this.btnVaraukset_Click);
             // 
             // btnAsiakkaat
             // 
-            this.btnAsiakkaat.Location = new System.Drawing.Point(287, 406);
+            this.btnAsiakkaat.Location = new System.Drawing.Point(232, 422);
             this.btnAsiakkaat.Name = "btnAsiakkaat";
             this.btnAsiakkaat.Size = new System.Drawing.Size(104, 23);
             this.btnAsiakkaat.TabIndex = 5;
             this.btnAsiakkaat.Text = "Asiakkaat";
             this.btnAsiakkaat.UseVisualStyleBackColor = true;
+            this.btnAsiakkaat.Click += new System.EventHandler(this.btnAsiakkaat_Click);
             // 
             // btnSulje
             // 
@@ -124,6 +116,7 @@
             this.btnSulje.TabIndex = 6;
             this.btnSulje.Text = "Sulje";
             this.btnSulje.UseVisualStyleBackColor = true;
+            this.btnSulje.Click += new System.EventHandler(this.btnSulje_Click);
             // 
             // Päävalikko
             // 
@@ -145,7 +138,6 @@
         private System.Windows.Forms.Button btnSulje;
         private System.Windows.Forms.Button btnAsiakkaat;
         private System.Windows.Forms.Button btnVaraukset;
-        private System.Windows.Forms.Button btnPalvelut;
         private System.Windows.Forms.Button btnToimialue;
         private System.Windows.Forms.Label lbOtsikko2;
         private System.Windows.Forms.Label lbOtsikko;

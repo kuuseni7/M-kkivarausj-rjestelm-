@@ -16,5 +16,28 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         {
             InitializeComponent();
         }
+
+        private void btnToimialue_Click(object sender, EventArgs e)
+        {
+            ToimialueidenHallinta th = new ToimialueidenHallinta();
+            th.ShowDialog();
+        }
+
+        private void btnVaraukset_Click(object sender, EventArgs e)
+        {
+            VarausLomake vl = new VarausLomake();
+            vl.ShowDialog();
+        }
+
+        private void btnAsiakkaat_Click(object sender, EventArgs e)
+        {
+            AsiakkaidenHallinta ah = new AsiakkaidenHallinta();
+            ah.ShowDialog();
+        }
+
+        private void btnSulje_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
