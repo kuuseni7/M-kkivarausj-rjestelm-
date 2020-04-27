@@ -71,7 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseInfo.cs" />
     <Compile Include="Lomakkeet\AsiakkaidenHallinta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,50 +109,6 @@
     <Compile Include="Lomakkeet\VarausteHallinta.Designer.cs">
       <DependentUpon>VarausteHallinta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tietokanta\Asiakas.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Lasku.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Mokki.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Palvelu.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Posti.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Toimintaalue.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\varauksen_palvelut.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\Varaus.cs">
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\VillageNewbiesDatamodel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VillageNewbiesDatamodel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\VillageNewbiesDatamodel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VillageNewbiesDatamodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\VillageNewbiesDatamodel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VillageNewbiesDatamodel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Tietokanta\VillageNewbiesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VillageNewbiesDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Lomakkeet\Päävalikko.resx">
       <DependentUpon>Päävalikko.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,24 +137,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="Tietokanta\VillageNewbiesDatamodel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>VillageNewbiesDatamodel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Tietokanta\VillageNewbiesDatamodel.edmx.diagram">
-      <DependentUpon>VillageNewbiesDatamodel.edmx</DependentUpon>
-    </None>
-    <None Include="Tietokanta\VillageNewbiesDataSet.xsc">
-      <DependentUpon>VillageNewbiesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Tietokanta\VillageNewbiesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VillageNewbiesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Tietokanta\VillageNewbiesDataSet.xss">
-      <DependentUpon>VillageNewbiesDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -215,25 +152,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Tietokanta\VillageNewbiesDatamodel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>VillageNewbiesDatamodel.Context.cs</LastGenOutput>
-      <DependentUpon>VillageNewbiesDatamodel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Tietokanta\VillageNewbiesDatamodel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VillageNewbiesDatamodel.edmx</DependentUpon>
-      <LastGenOutput>VillageNewbiesDatamodel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Tietokanta\VillageNewbies.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tietokanta\VillageNewbies_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>VillageNewbies.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
