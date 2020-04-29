@@ -28,238 +28,277 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.lbPuhNum = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbPostiNro = new System.Windows.Forms.Label();
+            this.lbOsoite = new System.Windows.Forms.Label();
+            this.lbSukuNimi = new System.Windows.Forms.Label();
+            this.lbEtuNimi = new System.Windows.Forms.Label();
+            this.tbPuhNum = new System.Windows.Forms.TextBox();
+            this.tbSPosti = new System.Windows.Forms.TextBox();
+            this.tbPostinumero = new System.Windows.Forms.TextBox();
+            this.tbOsoite = new System.Windows.Forms.TextBox();
+            this.tbSukunimi = new System.Windows.Forms.TextBox();
+            this.tbEtunimi = new System.Windows.Forms.TextBox();
+            this.btnLuoVaraus = new System.Windows.Forms.Button();
+            this.cbToimintaAlue = new System.Windows.Forms.ComboBox();
+            this.dgvMokki = new System.Windows.Forms.DataGridView();
+            this.dtpLopetus = new System.Windows.Forms.DateTimePicker();
+            this.dtpAloitus = new System.Windows.Forms.DateTimePicker();
+            this.btnHae = new System.Windows.Forms.Button();
             this.pnlVarausLomake = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tbKuvaus = new System.Windows.Forms.TextBox();
+            this.lbVarustelu = new System.Windows.Forms.Label();
+            this.lbKuvaus = new System.Windows.Forms.Label();
+            this.lbToimintaalue = new System.Windows.Forms.Label();
+            this.lbAloitus = new System.Windows.Forms.Label();
+            this.lbLoppu = new System.Windows.Forms.Label();
+            this.tbVarustelu = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
             this.pnlVarausLomake.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox7
+            // lbPuhNum
             // 
-            this.textBox7.Location = new System.Drawing.Point(606, 214);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 47;
+            this.lbPuhNum.AutoSize = true;
+            this.lbPuhNum.Location = new System.Drawing.Point(521, 173);
+            this.lbPuhNum.Name = "lbPuhNum";
+            this.lbPuhNum.Size = new System.Drawing.Size(80, 13);
+            this.lbPuhNum.TabIndex = 45;
+            this.lbPuhNum.Text = "Puhelinnumero:";
             // 
-            // label7
+            // lbEmail
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(524, 214);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "label7";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(521, 147);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(63, 13);
+            this.lbEmail.TabIndex = 44;
+            this.lbEmail.Text = "Sähköposti:";
             // 
-            // label6
+            // lbPostiNro
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(521, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Y-tunnus";
+            this.lbPostiNro.AutoSize = true;
+            this.lbPostiNro.Location = new System.Drawing.Point(521, 121);
+            this.lbPostiNro.Name = "lbPostiNro";
+            this.lbPostiNro.Size = new System.Drawing.Size(68, 13);
+            this.lbPostiNro.TabIndex = 43;
+            this.lbPostiNro.Text = "Postinumero:";
             // 
-            // label5
+            // lbOsoite
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(521, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "label5";
+            this.lbOsoite.AutoSize = true;
+            this.lbOsoite.Location = new System.Drawing.Point(521, 95);
+            this.lbOsoite.Name = "lbOsoite";
+            this.lbOsoite.Size = new System.Drawing.Size(58, 13);
+            this.lbOsoite.TabIndex = 42;
+            this.lbOsoite.Text = "Lähiosoite:";
             // 
-            // label4
+            // lbSukuNimi
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(521, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "label4";
+            this.lbSukuNimi.AutoSize = true;
+            this.lbSukuNimi.Location = new System.Drawing.Point(521, 66);
+            this.lbSukuNimi.Name = "lbSukuNimi";
+            this.lbSukuNimi.Size = new System.Drawing.Size(53, 13);
+            this.lbSukuNimi.TabIndex = 41;
+            this.lbSukuNimi.Text = "Sukunimi:";
             // 
-            // label3
+            // lbEtuNimi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(521, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "label3";
+            this.lbEtuNimi.AutoSize = true;
+            this.lbEtuNimi.Location = new System.Drawing.Point(521, 38);
+            this.lbEtuNimi.Name = "lbEtuNimi";
+            this.lbEtuNimi.Size = new System.Drawing.Size(44, 13);
+            this.lbEtuNimi.TabIndex = 40;
+            this.lbEtuNimi.Text = "Etunimi:";
             // 
-            // label2
+            // tbPuhNum
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(521, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "label2";
+            this.tbPuhNum.Location = new System.Drawing.Point(607, 173);
+            this.tbPuhNum.Name = "tbPuhNum";
+            this.tbPuhNum.Size = new System.Drawing.Size(100, 20);
+            this.tbPuhNum.TabIndex = 39;
             // 
-            // label1
+            // tbSPosti
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(521, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "label1";
+            this.tbSPosti.Location = new System.Drawing.Point(606, 147);
+            this.tbSPosti.Name = "tbSPosti";
+            this.tbSPosti.Size = new System.Drawing.Size(100, 20);
+            this.tbSPosti.TabIndex = 38;
             // 
-            // textBox6
+            // tbPostinumero
             // 
-            this.textBox6.Location = new System.Drawing.Point(606, 178);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 39;
+            this.tbPostinumero.Location = new System.Drawing.Point(606, 121);
+            this.tbPostinumero.Name = "tbPostinumero";
+            this.tbPostinumero.Size = new System.Drawing.Size(100, 20);
+            this.tbPostinumero.TabIndex = 37;
             // 
-            // textBox5
+            // tbOsoite
             // 
-            this.textBox5.Location = new System.Drawing.Point(606, 147);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 38;
+            this.tbOsoite.Location = new System.Drawing.Point(606, 95);
+            this.tbOsoite.Name = "tbOsoite";
+            this.tbOsoite.Size = new System.Drawing.Size(100, 20);
+            this.tbOsoite.TabIndex = 36;
             // 
-            // textBox4
+            // tbSukunimi
             // 
-            this.textBox4.Location = new System.Drawing.Point(606, 121);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 37;
+            this.tbSukunimi.Location = new System.Drawing.Point(606, 66);
+            this.tbSukunimi.Name = "tbSukunimi";
+            this.tbSukunimi.Size = new System.Drawing.Size(100, 20);
+            this.tbSukunimi.TabIndex = 35;
             // 
-            // textBox3
+            // tbEtunimi
             // 
-            this.textBox3.Location = new System.Drawing.Point(606, 95);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 36;
+            this.tbEtunimi.Location = new System.Drawing.Point(606, 38);
+            this.tbEtunimi.Name = "tbEtunimi";
+            this.tbEtunimi.Size = new System.Drawing.Size(100, 20);
+            this.tbEtunimi.TabIndex = 34;
             // 
-            // textBox2
+            // btnLuoVaraus
             // 
-            this.textBox2.Location = new System.Drawing.Point(606, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 35;
+            this.btnLuoVaraus.Location = new System.Drawing.Point(607, 285);
+            this.btnLuoVaraus.Name = "btnLuoVaraus";
+            this.btnLuoVaraus.Size = new System.Drawing.Size(75, 23);
+            this.btnLuoVaraus.TabIndex = 33;
+            this.btnLuoVaraus.Text = "Luo varaus";
+            this.btnLuoVaraus.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // cbToimintaAlue
             // 
-            this.textBox1.Location = new System.Drawing.Point(606, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 34;
+            this.cbToimintaAlue.FormattingEnabled = true;
+            this.cbToimintaAlue.Location = new System.Drawing.Point(12, 37);
+            this.cbToimintaAlue.Name = "cbToimintaAlue";
+            this.cbToimintaAlue.Size = new System.Drawing.Size(121, 21);
+            this.cbToimintaAlue.TabIndex = 32;
             // 
-            // button2
+            // dgvMokki
             // 
-            this.button2.Location = new System.Drawing.Point(606, 290);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dgvMokki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMokki.Location = new System.Drawing.Point(12, 111);
+            this.dgvMokki.Name = "dgvMokki";
+            this.dgvMokki.Size = new System.Drawing.Size(474, 177);
+            this.dgvMokki.TabIndex = 31;
             // 
-            // comboBox2
+            // dtpLopetus
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(36, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 32;
+            this.dtpLopetus.Location = new System.Drawing.Point(286, 66);
+            this.dtpLopetus.Name = "dtpLopetus";
+            this.dtpLopetus.Size = new System.Drawing.Size(200, 20);
+            this.dtpLopetus.TabIndex = 30;
             // 
-            // dataGridView1
+            // dtpAloitus
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 177);
-            this.dataGridView1.TabIndex = 31;
+            this.dtpAloitus.Location = new System.Drawing.Point(286, 38);
+            this.dtpAloitus.Name = "dtpAloitus";
+            this.dtpAloitus.Size = new System.Drawing.Size(200, 20);
+            this.dtpAloitus.TabIndex = 29;
+            this.dtpAloitus.ValueChanged += new System.EventHandler(this.dtpAloitus_ValueChanged);
             // 
-            // dateTimePicker2
+            // btnHae
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(240, 64);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 30;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(240, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 29;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(82, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(37, 330);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox2.TabIndex = 27;
+            this.btnHae.Location = new System.Drawing.Point(12, 64);
+            this.btnHae.Name = "btnHae";
+            this.btnHae.Size = new System.Drawing.Size(75, 23);
+            this.btnHae.TabIndex = 28;
+            this.btnHae.Text = "Hae";
+            this.btnHae.UseVisualStyleBackColor = true;
             // 
             // pnlVarausLomake
             // 
-            this.pnlVarausLomake.Controls.Add(this.textBox7);
-            this.pnlVarausLomake.Controls.Add(this.label7);
-            this.pnlVarausLomake.Controls.Add(this.label6);
-            this.pnlVarausLomake.Controls.Add(this.label5);
-            this.pnlVarausLomake.Controls.Add(this.label4);
-            this.pnlVarausLomake.Controls.Add(this.label3);
-            this.pnlVarausLomake.Controls.Add(this.label2);
-            this.pnlVarausLomake.Controls.Add(this.label1);
-            this.pnlVarausLomake.Controls.Add(this.textBox6);
-            this.pnlVarausLomake.Controls.Add(this.textBox5);
-            this.pnlVarausLomake.Controls.Add(this.textBox4);
-            this.pnlVarausLomake.Controls.Add(this.textBox3);
-            this.pnlVarausLomake.Controls.Add(this.textBox2);
-            this.pnlVarausLomake.Controls.Add(this.textBox1);
-            this.pnlVarausLomake.Controls.Add(this.button2);
-            this.pnlVarausLomake.Controls.Add(this.comboBox2);
-            this.pnlVarausLomake.Controls.Add(this.dataGridView1);
-            this.pnlVarausLomake.Controls.Add(this.dateTimePicker2);
-            this.pnlVarausLomake.Controls.Add(this.dateTimePicker1);
-            this.pnlVarausLomake.Controls.Add(this.button1);
-            this.pnlVarausLomake.Controls.Add(this.checkedListBox2);
-            this.pnlVarausLomake.Controls.Add(this.checkedListBox1);
+            this.pnlVarausLomake.Controls.Add(this.tbVarustelu);
+            this.pnlVarausLomake.Controls.Add(this.lbLoppu);
+            this.pnlVarausLomake.Controls.Add(this.lbAloitus);
+            this.pnlVarausLomake.Controls.Add(this.lbToimintaalue);
+            this.pnlVarausLomake.Controls.Add(this.lbKuvaus);
+            this.pnlVarausLomake.Controls.Add(this.lbVarustelu);
+            this.pnlVarausLomake.Controls.Add(this.tbKuvaus);
+            this.pnlVarausLomake.Controls.Add(this.lbPuhNum);
+            this.pnlVarausLomake.Controls.Add(this.lbEmail);
+            this.pnlVarausLomake.Controls.Add(this.lbPostiNro);
+            this.pnlVarausLomake.Controls.Add(this.lbOsoite);
+            this.pnlVarausLomake.Controls.Add(this.lbSukuNimi);
+            this.pnlVarausLomake.Controls.Add(this.lbEtuNimi);
+            this.pnlVarausLomake.Controls.Add(this.tbPuhNum);
+            this.pnlVarausLomake.Controls.Add(this.tbSPosti);
+            this.pnlVarausLomake.Controls.Add(this.tbPostinumero);
+            this.pnlVarausLomake.Controls.Add(this.tbOsoite);
+            this.pnlVarausLomake.Controls.Add(this.tbSukunimi);
+            this.pnlVarausLomake.Controls.Add(this.tbEtunimi);
+            this.pnlVarausLomake.Controls.Add(this.btnLuoVaraus);
+            this.pnlVarausLomake.Controls.Add(this.cbToimintaAlue);
+            this.pnlVarausLomake.Controls.Add(this.dgvMokki);
+            this.pnlVarausLomake.Controls.Add(this.dtpLopetus);
+            this.pnlVarausLomake.Controls.Add(this.dtpAloitus);
+            this.pnlVarausLomake.Controls.Add(this.btnHae);
             this.pnlVarausLomake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVarausLomake.Location = new System.Drawing.Point(0, 0);
             this.pnlVarausLomake.Name = "pnlVarausLomake";
             this.pnlVarausLomake.Size = new System.Drawing.Size(800, 450);
             this.pnlVarausLomake.TabIndex = 1;
             // 
-            // checkedListBox1
+            // tbKuvaus
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(214, 330);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 26;
+            this.tbKuvaus.Location = new System.Drawing.Point(12, 311);
+            this.tbKuvaus.Multiline = true;
+            this.tbKuvaus.Name = "tbKuvaus";
+            this.tbKuvaus.Size = new System.Drawing.Size(185, 124);
+            this.tbKuvaus.TabIndex = 48;
+            // 
+            // lbVarustelu
+            // 
+            this.lbVarustelu.AutoSize = true;
+            this.lbVarustelu.Location = new System.Drawing.Point(298, 295);
+            this.lbVarustelu.Name = "lbVarustelu";
+            this.lbVarustelu.Size = new System.Drawing.Size(54, 13);
+            this.lbVarustelu.TabIndex = 49;
+            this.lbVarustelu.Text = "Varustelu:";
+            // 
+            // lbKuvaus
+            // 
+            this.lbKuvaus.AutoSize = true;
+            this.lbKuvaus.Location = new System.Drawing.Point(12, 295);
+            this.lbKuvaus.Name = "lbKuvaus";
+            this.lbKuvaus.Size = new System.Drawing.Size(46, 13);
+            this.lbKuvaus.TabIndex = 50;
+            this.lbKuvaus.Text = "Kuvaus:";
+            // 
+            // lbToimintaalue
+            // 
+            this.lbToimintaalue.AutoSize = true;
+            this.lbToimintaalue.Location = new System.Drawing.Point(9, 21);
+            this.lbToimintaalue.Name = "lbToimintaalue";
+            this.lbToimintaalue.Size = new System.Drawing.Size(73, 13);
+            this.lbToimintaalue.TabIndex = 51;
+            this.lbToimintaalue.Text = "Toiminta-alue:";
+            // 
+            // lbAloitus
+            // 
+            this.lbAloitus.AutoSize = true;
+            this.lbAloitus.Location = new System.Drawing.Point(190, 41);
+            this.lbAloitus.Name = "lbAloitus";
+            this.lbAloitus.Size = new System.Drawing.Size(84, 13);
+            this.lbAloitus.TabIndex = 52;
+            this.lbAloitus.Text = "Varauksen alku:";
+            // 
+            // lbLoppu
+            // 
+            this.lbLoppu.AutoSize = true;
+            this.lbLoppu.Location = new System.Drawing.Point(190, 72);
+            this.lbLoppu.Name = "lbLoppu";
+            this.lbLoppu.Size = new System.Drawing.Size(90, 13);
+            this.lbLoppu.TabIndex = 53;
+            this.lbLoppu.Text = "Varauksen loppu:";
+            // 
+            // tbVarustelu
+            // 
+            this.tbVarustelu.Location = new System.Drawing.Point(301, 311);
+            this.tbVarustelu.Multiline = true;
+            this.tbVarustelu.Name = "tbVarustelu";
+            this.tbVarustelu.ReadOnly = true;
+            this.tbVarustelu.Size = new System.Drawing.Size(185, 124);
+            this.tbVarustelu.TabIndex = 54;
+            this.tbVarustelu.Text = "Astianpesukone\r\nAutonlämmitystolppa\r\nKuivauskaappi\r\nPyykinpesukone\r\nTakka\r\nSility" +
+    "svälineet\r\nWifi";
             // 
             // VarausLomake
             // 
@@ -269,7 +308,7 @@
             this.Controls.Add(this.pnlVarausLomake);
             this.Name = "VarausLomake";
             this.Text = "VarausLomake";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).EndInit();
             this.pnlVarausLomake.ResumeLayout(false);
             this.pnlVarausLomake.PerformLayout();
             this.ResumeLayout(false);
@@ -277,29 +316,31 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.Label lbPuhNum;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbPostiNro;
+        private System.Windows.Forms.Label lbOsoite;
+        private System.Windows.Forms.Label lbSukuNimi;
+        private System.Windows.Forms.Label lbEtuNimi;
+        private System.Windows.Forms.TextBox tbPuhNum;
+        private System.Windows.Forms.TextBox tbSPosti;
+        private System.Windows.Forms.TextBox tbPostinumero;
+        private System.Windows.Forms.TextBox tbOsoite;
+        private System.Windows.Forms.TextBox tbSukunimi;
+        private System.Windows.Forms.TextBox tbEtunimi;
+        private System.Windows.Forms.Button btnLuoVaraus;
+        private System.Windows.Forms.ComboBox cbToimintaAlue;
+        private System.Windows.Forms.DataGridView dgvMokki;
+        private System.Windows.Forms.DateTimePicker dtpLopetus;
+        private System.Windows.Forms.DateTimePicker dtpAloitus;
+        private System.Windows.Forms.Button btnHae;
         private System.Windows.Forms.Panel pnlVarausLomake;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label lbToimintaalue;
+        private System.Windows.Forms.Label lbKuvaus;
+        private System.Windows.Forms.Label lbVarustelu;
+        private System.Windows.Forms.TextBox tbKuvaus;
+        private System.Windows.Forms.Label lbLoppu;
+        private System.Windows.Forms.Label lbAloitus;
+        private System.Windows.Forms.TextBox tbVarustelu;
     }
 }

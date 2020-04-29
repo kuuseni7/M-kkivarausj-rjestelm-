@@ -16,5 +16,11 @@ namespace Mökkivarausjärjestelmä_1._0
         {
             InitializeComponent();
         }
+
+        private void dtpAloitus_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpAloitus.Value < DateTime.Now)
+                MessageBox.Show("Virheellinen valinta");
+        }
     }
 }
