@@ -28,7 +28,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         private void LisaaMokki_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektiData.mokki' table. You can move, or remove it, as needed.
-            this.mokkiTableAdapter.Fill(this.projektiData.mokki);
+            //this.mokkiTableAdapter.Fill(this.projektiData.mokki);
 
         }
     }

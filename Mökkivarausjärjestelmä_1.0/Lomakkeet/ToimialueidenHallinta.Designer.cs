@@ -35,18 +35,18 @@
             this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
-            this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
+            this.btnLisaa = new System.Windows.Forms.Button();
+            this.lbLisaaMokki = new System.Windows.Forms.Label();
             this.toimintaalueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
-            this.btnLisaa = new System.Windows.Forms.Button();
-            this.lbLisaaMokki = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgMokki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
@@ -78,8 +78,8 @@
             this.dgMokki.AutoGenerateColumns = false;
             this.dgMokki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMokki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mokkiidDataGridViewTextBoxColumn,
             this.toimintaalueidDataGridViewTextBoxColumn,
+            this.mokkiidDataGridViewTextBoxColumn,
             this.postinroDataGridViewTextBoxColumn,
             this.mokkinimiDataGridViewTextBoxColumn,
             this.katuosoiteDataGridViewTextBoxColumn,
@@ -106,17 +106,45 @@
             // 
             this.mokkiTableAdapter.ClearBeforeFill = true;
             // 
-            // mokkiidDataGridViewTextBoxColumn
+            // toimintaalueBindingSource
             // 
-            this.mokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_id";
-            this.mokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_id";
-            this.mokkiidDataGridViewTextBoxColumn.Name = "mokkiidDataGridViewTextBoxColumn";
+            this.toimintaalueBindingSource.DataMember = "toimintaalue";
+            this.toimintaalueBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // toimintaalueTableAdapter
+            // 
+            this.toimintaalueTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnLisaa
+            // 
+            this.btnLisaa.Location = new System.Drawing.Point(230, 44);
+            this.btnLisaa.Name = "btnLisaa";
+            this.btnLisaa.Size = new System.Drawing.Size(81, 30);
+            this.btnLisaa.TabIndex = 3;
+            this.btnLisaa.Text = "Lisää";
+            this.btnLisaa.UseVisualStyleBackColor = true;
+            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
+            // 
+            // lbLisaaMokki
+            // 
+            this.lbLisaaMokki.AutoSize = true;
+            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 22);
+            this.lbLisaaMokki.Name = "lbLisaaMokki";
+            this.lbLisaaMokki.Size = new System.Drawing.Size(66, 13);
+            this.lbLisaaMokki.TabIndex = 4;
+            this.lbLisaaMokki.Text = "Lisää mökki:";
             // 
             // toimintaalueidDataGridViewTextBoxColumn
             // 
             this.toimintaalueidDataGridViewTextBoxColumn.DataPropertyName = "toimintaalue_id";
             this.toimintaalueidDataGridViewTextBoxColumn.HeaderText = "toimintaalue_id";
             this.toimintaalueidDataGridViewTextBoxColumn.Name = "toimintaalueidDataGridViewTextBoxColumn";
+            // 
+            // mokkiidDataGridViewTextBoxColumn
+            // 
+            this.mokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_id";
+            this.mokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_id";
+            this.mokkiidDataGridViewTextBoxColumn.Name = "mokkiidDataGridViewTextBoxColumn";
             // 
             // postinroDataGridViewTextBoxColumn
             // 
@@ -154,34 +182,6 @@
             this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
             this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
             // 
-            // toimintaalueBindingSource
-            // 
-            this.toimintaalueBindingSource.DataMember = "toimintaalue";
-            this.toimintaalueBindingSource.DataSource = this.villageNewbiesDataSet;
-            // 
-            // toimintaalueTableAdapter
-            // 
-            this.toimintaalueTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnLisaa
-            // 
-            this.btnLisaa.Location = new System.Drawing.Point(230, 44);
-            this.btnLisaa.Name = "btnLisaa";
-            this.btnLisaa.Size = new System.Drawing.Size(81, 30);
-            this.btnLisaa.TabIndex = 3;
-            this.btnLisaa.Text = "Lisää";
-            this.btnLisaa.UseVisualStyleBackColor = true;
-            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
-            // 
-            // lbLisaaMokki
-            // 
-            this.lbLisaaMokki.AutoSize = true;
-            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 22);
-            this.lbLisaaMokki.Name = "lbLisaaMokki";
-            this.lbLisaaMokki.Size = new System.Drawing.Size(66, 13);
-            this.lbLisaaMokki.TabIndex = 4;
-            this.lbLisaaMokki.Text = "Lisää mökki:";
-            // 
             // ToimialueidenHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,17 +212,17 @@
         private VillageNewbiesDataSet villageNewbiesDataSet;
         private System.Windows.Forms.BindingSource mokkiBindingSource;
         private VillageNewbiesDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mokkiidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource toimintaalueBindingSource;
+        private VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
+        private System.Windows.Forms.Button btnLisaa;
+        private System.Windows.Forms.Label lbLisaaMokki;
         private System.Windows.Forms.DataGridViewTextBoxColumn toimintaalueidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mokkiidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mokkinimiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn katuosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource toimintaalueBindingSource;
-        private VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
-        private System.Windows.Forms.Button btnLisaa;
-        private System.Windows.Forms.Label lbLisaaMokki;
     }
 }

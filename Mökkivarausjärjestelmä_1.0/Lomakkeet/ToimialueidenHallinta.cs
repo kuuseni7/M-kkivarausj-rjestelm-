@@ -28,7 +28,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
-            LisaaMokki lm = new LisaaMokki();
+            LisääMökki lm = new LisääMökki();
             lm.ShowDialog();
         }
     }

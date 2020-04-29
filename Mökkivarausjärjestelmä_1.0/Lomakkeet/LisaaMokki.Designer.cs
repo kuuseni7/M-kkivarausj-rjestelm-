@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LisaaMokki));
             System.Windows.Forms.Label mokkinimiLabel;
             System.Windows.Forms.Label mokki_idLabel;
             System.Windows.Forms.Label katuosoiteLabel;
             System.Windows.Forms.Label kuvausLabel;
             System.Windows.Forms.Label henkilomaaraLabel;
             System.Windows.Forms.Label varusteluLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LisaaMokki));
             this.projektiData = new Mökkivarausjärjestelmä_1._0.ProjektiData();
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.mokkiTableAdapter();
             this.tableAdapterManager = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.TableAdapterManager();
             this.mokkiBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.mokkiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.mokkinimiTextBox = new System.Windows.Forms.TextBox();
             this.mokki_idTextBox = new System.Windows.Forms.TextBox();
             this.katuosoiteTextBox = new System.Windows.Forms.TextBox();
-            this.kuvausTextBox = new System.Windows.Forms.TextBox();
+            this.tbKuvaus = new System.Windows.Forms.TextBox();
             this.henkilomaaraNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.varusteluCheckedListBox = new System.Windows.Forms.CheckedListBox();
             mokkinimiLabel = new System.Windows.Forms.Label();
@@ -71,6 +71,60 @@
             this.mokkiBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.henkilomaaraNumericUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mokkinimiLabel
+            // 
+            mokkinimiLabel.AutoSize = true;
+            mokkinimiLabel.Location = new System.Drawing.Point(9, 95);
+            mokkinimiLabel.Name = "mokkinimiLabel";
+            mokkinimiLabel.Size = new System.Drawing.Size(56, 13);
+            mokkinimiLabel.TabIndex = 1;
+            mokkinimiLabel.Text = "mokkinimi:";
+            // 
+            // mokki_idLabel
+            // 
+            mokki_idLabel.AutoSize = true;
+            mokki_idLabel.Location = new System.Drawing.Point(9, 69);
+            mokki_idLabel.Name = "mokki_idLabel";
+            mokki_idLabel.Size = new System.Drawing.Size(49, 13);
+            mokki_idLabel.TabIndex = 3;
+            mokki_idLabel.Text = "mokki id:";
+            // 
+            // katuosoiteLabel
+            // 
+            katuosoiteLabel.AutoSize = true;
+            katuosoiteLabel.Location = new System.Drawing.Point(9, 136);
+            katuosoiteLabel.Name = "katuosoiteLabel";
+            katuosoiteLabel.Size = new System.Drawing.Size(59, 13);
+            katuosoiteLabel.TabIndex = 5;
+            katuosoiteLabel.Text = "katuosoite:";
+            // 
+            // kuvausLabel
+            // 
+            kuvausLabel.AutoSize = true;
+            kuvausLabel.Location = new System.Drawing.Point(12, 233);
+            kuvausLabel.Name = "kuvausLabel";
+            kuvausLabel.Size = new System.Drawing.Size(45, 13);
+            kuvausLabel.TabIndex = 7;
+            kuvausLabel.Text = "kuvaus:";
+            // 
+            // henkilomaaraLabel
+            // 
+            henkilomaaraLabel.AutoSize = true;
+            henkilomaaraLabel.Location = new System.Drawing.Point(9, 175);
+            henkilomaaraLabel.Name = "henkilomaaraLabel";
+            henkilomaaraLabel.Size = new System.Drawing.Size(73, 13);
+            henkilomaaraLabel.TabIndex = 9;
+            henkilomaaraLabel.Text = "henkilomaara:";
+            // 
+            // varusteluLabel
+            // 
+            varusteluLabel.AutoSize = true;
+            varusteluLabel.Location = new System.Drawing.Point(254, 59);
+            varusteluLabel.Name = "varusteluLabel";
+            varusteluLabel.Size = new System.Drawing.Size(53, 13);
+            varusteluLabel.TabIndex = 11;
+            varusteluLabel.Text = "varustelu:";
             // 
             // projektiData
             // 
@@ -129,6 +183,31 @@
             this.mokkiBindingNavigator.TabIndex = 0;
             this.mokkiBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -156,22 +235,16 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -179,7 +252,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -188,49 +261,22 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // mokkiBindingNavigatorSaveItem
             // 
             this.mokkiBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.mokkiBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("mokkiBindingNavigatorSaveItem.Image")));
             this.mokkiBindingNavigatorSaveItem.Name = "mokkiBindingNavigatorSaveItem";
-            this.mokkiBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.mokkiBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.mokkiBindingNavigatorSaveItem.Text = "Save Data";
             this.mokkiBindingNavigatorSaveItem.Click += new System.EventHandler(this.mokkiBindingNavigatorSaveItem_Click);
-            // 
-            // mokkinimiLabel
-            // 
-            mokkinimiLabel.AutoSize = true;
-            mokkinimiLabel.Location = new System.Drawing.Point(9, 95);
-            mokkinimiLabel.Name = "mokkinimiLabel";
-            mokkinimiLabel.Size = new System.Drawing.Size(56, 13);
-            mokkinimiLabel.TabIndex = 1;
-            mokkinimiLabel.Text = "mokkinimi:";
             // 
             // mokkinimiTextBox
             // 
@@ -240,15 +286,6 @@
             this.mokkinimiTextBox.Size = new System.Drawing.Size(100, 20);
             this.mokkinimiTextBox.TabIndex = 2;
             // 
-            // mokki_idLabel
-            // 
-            mokki_idLabel.AutoSize = true;
-            mokki_idLabel.Location = new System.Drawing.Point(9, 69);
-            mokki_idLabel.Name = "mokki_idLabel";
-            mokki_idLabel.Size = new System.Drawing.Size(49, 13);
-            mokki_idLabel.TabIndex = 3;
-            mokki_idLabel.Text = "mokki id:";
-            // 
             // mokki_idTextBox
             // 
             this.mokki_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "mokki_id", true));
@@ -256,15 +293,6 @@
             this.mokki_idTextBox.Name = "mokki_idTextBox";
             this.mokki_idTextBox.Size = new System.Drawing.Size(100, 20);
             this.mokki_idTextBox.TabIndex = 4;
-            // 
-            // katuosoiteLabel
-            // 
-            katuosoiteLabel.AutoSize = true;
-            katuosoiteLabel.Location = new System.Drawing.Point(9, 136);
-            katuosoiteLabel.Name = "katuosoiteLabel";
-            katuosoiteLabel.Size = new System.Drawing.Size(59, 13);
-            katuosoiteLabel.TabIndex = 5;
-            katuosoiteLabel.Text = "katuosoite:";
             // 
             // katuosoiteTextBox
             // 
@@ -274,32 +302,14 @@
             this.katuosoiteTextBox.Size = new System.Drawing.Size(100, 20);
             this.katuosoiteTextBox.TabIndex = 6;
             // 
-            // kuvausLabel
+            // tbKuvaus
             // 
-            kuvausLabel.AutoSize = true;
-            kuvausLabel.Location = new System.Drawing.Point(12, 233);
-            kuvausLabel.Name = "kuvausLabel";
-            kuvausLabel.Size = new System.Drawing.Size(45, 13);
-            kuvausLabel.TabIndex = 7;
-            kuvausLabel.Text = "kuvaus:";
-            // 
-            // kuvausTextBox
-            // 
-            this.kuvausTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "kuvaus", true));
-            this.kuvausTextBox.Location = new System.Drawing.Point(88, 233);
-            this.kuvausTextBox.Multiline = true;
-            this.kuvausTextBox.Name = "kuvausTextBox";
-            this.kuvausTextBox.Size = new System.Drawing.Size(324, 155);
-            this.kuvausTextBox.TabIndex = 8;
-            // 
-            // henkilomaaraLabel
-            // 
-            henkilomaaraLabel.AutoSize = true;
-            henkilomaaraLabel.Location = new System.Drawing.Point(9, 175);
-            henkilomaaraLabel.Name = "henkilomaaraLabel";
-            henkilomaaraLabel.Size = new System.Drawing.Size(73, 13);
-            henkilomaaraLabel.TabIndex = 9;
-            henkilomaaraLabel.Text = "henkilomaara:";
+            this.tbKuvaus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "kuvaus", true));
+            this.tbKuvaus.Location = new System.Drawing.Point(88, 233);
+            this.tbKuvaus.Multiline = true;
+            this.tbKuvaus.Name = "tbKuvaus";
+            this.tbKuvaus.Size = new System.Drawing.Size(324, 155);
+            this.tbKuvaus.TabIndex = 8;
             // 
             // henkilomaaraNumericUpDown
             // 
@@ -308,15 +318,6 @@
             this.henkilomaaraNumericUpDown.Name = "henkilomaaraNumericUpDown";
             this.henkilomaaraNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.henkilomaaraNumericUpDown.TabIndex = 10;
-            // 
-            // varusteluLabel
-            // 
-            varusteluLabel.AutoSize = true;
-            varusteluLabel.Location = new System.Drawing.Point(254, 59);
-            varusteluLabel.Name = "varusteluLabel";
-            varusteluLabel.Size = new System.Drawing.Size(53, 13);
-            varusteluLabel.TabIndex = 11;
-            varusteluLabel.Text = "varustelu:";
             // 
             // varusteluCheckedListBox
             // 
@@ -337,7 +338,7 @@
             this.Controls.Add(henkilomaaraLabel);
             this.Controls.Add(this.henkilomaaraNumericUpDown);
             this.Controls.Add(kuvausLabel);
-            this.Controls.Add(this.kuvausTextBox);
+            this.Controls.Add(this.tbKuvaus);
             this.Controls.Add(katuosoiteLabel);
             this.Controls.Add(this.katuosoiteTextBox);
             this.Controls.Add(mokki_idLabel);
@@ -381,7 +382,7 @@
         private System.Windows.Forms.TextBox mokkinimiTextBox;
         private System.Windows.Forms.TextBox mokki_idTextBox;
         private System.Windows.Forms.TextBox katuosoiteTextBox;
-        private System.Windows.Forms.TextBox kuvausTextBox;
+        private System.Windows.Forms.TextBox tbKuvaus;
         private System.Windows.Forms.NumericUpDown henkilomaaraNumericUpDown;
         private System.Windows.Forms.CheckedListBox varusteluCheckedListBox;
     }
