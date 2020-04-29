@@ -83,11 +83,23 @@
     <Compile Include="Lomakkeet\LaskujenHallinta.Designer.cs">
       <DependentUpon>LaskujenHallinta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lomakkeet\LisaaMokki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lomakkeet\LisaaMokki.Designer.cs">
+      <DependentUpon>LisaaMokki.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lomakkeet\Päävalikko.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Lomakkeet\Päävalikko.Designer.cs">
       <DependentUpon>Päävalikko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lomakkeet\Testi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lomakkeet\Testi.Designer.cs">
+      <DependentUpon>Testi.cs</DependentUpon>
     </Compile>
     <Compile Include="Lomakkeet\ToimialueidenHallinta.cs">
       <SubType>Form</SubType>
@@ -114,8 +126,14 @@
     <Compile Include="Lomakkeet\VarausteHallinta.Designer.cs">
       <DependentUpon>VarausteHallinta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Lomakkeet\LisaaMokki.resx">
+      <DependentUpon>LisaaMokki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\Päävalikko.resx">
       <DependentUpon>Päävalikko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lomakkeet\Testi.resx">
+      <DependentUpon>Testi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\ToimialueidenHallinta.resx">
       <DependentUpon>ToimialueidenHallinta.cs</DependentUpon>

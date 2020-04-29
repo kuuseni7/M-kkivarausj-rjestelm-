@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 {
-    public partial class ToimialueidenHallinta : Form
-    {   
-        
-        public ToimialueidenHallinta()
+    public partial class Testi : Form
+    {
+        public Testi()
         {
             InitializeComponent();
         }
-
-        
 
         private void toimintaalueBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -28,35 +25,10 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 
         }
 
-        private void ToimialueidenHallinta_Load(object sender, EventArgs e)
+        private void Testi_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektiData.toimintaalue' table. You can move, or remove it, as needed.
-           // this.toimintaalueTableAdapter.Fill(this.projektiData.toimintaalue);
-
-        }
-
-
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            
-
-
-
-
-
-
-
-            /*try
-            {
-                this.Validate();
-                this.toimintaalueBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.projektiData);
-            }
-            catch(System.Exception ex)
-            {
-                MessageBox.Show("Update failed");
-            }*/
+            //this.toimintaalueTableAdapter.Fill(this.projektiData.toimintaalue);
 
         }
     }
