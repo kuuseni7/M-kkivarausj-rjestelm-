@@ -31,14 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.lbToimialue = new System.Windows.Forms.Label();
             this.cbToimialue = new System.Windows.Forms.ComboBox();
-            this.dgMokki = new System.Windows.Forms.DataGridView();
-            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
-            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
             this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
-            this.btnLisaa = new System.Windows.Forms.Button();
-            this.lbLisaaMokki = new System.Windows.Forms.Label();
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
+            this.dgMokki = new System.Windows.Forms.DataGridView();
             this.toimintaalueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +42,19 @@
             this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMokki)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
+            this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
+            this.btnLisaa = new System.Windows.Forms.Button();
+            this.lbLisaaMokki = new System.Windows.Forms.Label();
+            this.btnPaivita = new System.Windows.Forms.Button();
+            this.dgMokkiFillToolStrip = new System.Windows.Forms.ToolStrip();
+            this.dgMokkiFillToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMokki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
+            this.dgMokkiFillToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbToimialue
@@ -73,6 +77,16 @@
             this.cbToimialue.TabIndex = 1;
             this.cbToimialue.ValueMember = "toimintaalue_id";
             // 
+            // toimintaalueBindingSource
+            // 
+            this.toimintaalueBindingSource.DataMember = "toimintaalue";
+            this.toimintaalueBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dgMokki
             // 
             this.dgMokki.AutoGenerateColumns = false;
@@ -91,48 +105,6 @@
             this.dgMokki.Name = "dgMokki";
             this.dgMokki.Size = new System.Drawing.Size(843, 323);
             this.dgMokki.TabIndex = 2;
-            // 
-            // villageNewbiesDataSet
-            // 
-            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
-            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mokkiBindingSource
-            // 
-            this.mokkiBindingSource.DataMember = "mokki";
-            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
-            // 
-            // mokkiTableAdapter
-            // 
-            this.mokkiTableAdapter.ClearBeforeFill = true;
-            // 
-            // toimintaalueBindingSource
-            // 
-            this.toimintaalueBindingSource.DataMember = "toimintaalue";
-            this.toimintaalueBindingSource.DataSource = this.villageNewbiesDataSet;
-            // 
-            // toimintaalueTableAdapter
-            // 
-            this.toimintaalueTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnLisaa
-            // 
-            this.btnLisaa.Location = new System.Drawing.Point(230, 44);
-            this.btnLisaa.Name = "btnLisaa";
-            this.btnLisaa.Size = new System.Drawing.Size(81, 30);
-            this.btnLisaa.TabIndex = 3;
-            this.btnLisaa.Text = "Lisää";
-            this.btnLisaa.UseVisualStyleBackColor = true;
-            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
-            // 
-            // lbLisaaMokki
-            // 
-            this.lbLisaaMokki.AutoSize = true;
-            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 22);
-            this.lbLisaaMokki.Name = "lbLisaaMokki";
-            this.lbLisaaMokki.Size = new System.Drawing.Size(66, 13);
-            this.lbLisaaMokki.TabIndex = 4;
-            this.lbLisaaMokki.Text = "Lisää mökki:";
             // 
             // toimintaalueidDataGridViewTextBoxColumn
             // 
@@ -182,11 +154,72 @@
             this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
             this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
             // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // mokkiTableAdapter
+            // 
+            this.mokkiTableAdapter.ClearBeforeFill = true;
+            // 
+            // toimintaalueTableAdapter
+            // 
+            this.toimintaalueTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnLisaa
+            // 
+            this.btnLisaa.Location = new System.Drawing.Point(230, 44);
+            this.btnLisaa.Name = "btnLisaa";
+            this.btnLisaa.Size = new System.Drawing.Size(81, 30);
+            this.btnLisaa.TabIndex = 3;
+            this.btnLisaa.Text = "Lisää";
+            this.btnLisaa.UseVisualStyleBackColor = true;
+            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
+            // 
+            // lbLisaaMokki
+            // 
+            this.lbLisaaMokki.AutoSize = true;
+            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 22);
+            this.lbLisaaMokki.Name = "lbLisaaMokki";
+            this.lbLisaaMokki.Size = new System.Drawing.Size(66, 13);
+            this.lbLisaaMokki.TabIndex = 4;
+            this.lbLisaaMokki.Text = "Lisää mökki:";
+            // 
+            // btnPaivita
+            // 
+            this.btnPaivita.Location = new System.Drawing.Point(81, 71);
+            this.btnPaivita.Name = "btnPaivita";
+            this.btnPaivita.Size = new System.Drawing.Size(75, 23);
+            this.btnPaivita.TabIndex = 5;
+            this.btnPaivita.Text = "Päivitä";
+            this.btnPaivita.UseVisualStyleBackColor = true;
+            // 
+            // dgMokkiFillToolStrip
+            // 
+            this.dgMokkiFillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dgMokkiFillToolStripButton});
+            this.dgMokkiFillToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.dgMokkiFillToolStrip.Name = "dgMokkiFillToolStrip";
+            this.dgMokkiFillToolStrip.Size = new System.Drawing.Size(892, 25);
+            this.dgMokkiFillToolStrip.TabIndex = 6;
+            this.dgMokkiFillToolStrip.Text = "dgMokkiFillToolStrip";
+            // 
+            // dgMokkiFillToolStripButton
+            // 
+            this.dgMokkiFillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.dgMokkiFillToolStripButton.Name = "dgMokkiFillToolStripButton";
+            this.dgMokkiFillToolStripButton.Size = new System.Drawing.Size(73, 22);
+            this.dgMokkiFillToolStripButton.Text = "dgMokkiFill";
+            this.dgMokkiFillToolStripButton.Click += new System.EventHandler(this.dgMokkiFillToolStripButton_Click);
+            // 
             // ToimialueidenHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 450);
+            this.ClientSize = new System.Drawing.Size(892, 458);
+            this.Controls.Add(this.dgMokkiFillToolStrip);
+            this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.lbLisaaMokki);
             this.Controls.Add(this.btnLisaa);
             this.Controls.Add(this.dgMokki);
@@ -195,10 +228,12 @@
             this.Name = "ToimialueidenHallinta";
             this.Text = "ToimialueidenHallinta";
             this.Load += new System.EventHandler(this.ToimialueidenHallinta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgMokki)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMokki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
+            this.dgMokkiFillToolStrip.ResumeLayout(false);
+            this.dgMokkiFillToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +259,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnPaivita;
+        private System.Windows.Forms.ToolStrip dgMokkiFillToolStrip;
+        private System.Windows.Forms.ToolStripButton dgMokkiFillToolStripButton;
     }
 }

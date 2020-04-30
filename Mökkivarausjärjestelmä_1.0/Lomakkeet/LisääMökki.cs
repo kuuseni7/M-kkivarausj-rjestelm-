@@ -23,7 +23,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 connection.Open();
                 //String query = ("INSERT INTO mokki (mokki_id,postinro,mokkinimi,katuosoite,kuvaus,henkilomaara,varustelu) VALUES(@mokki_id,@postinro,@mokkinimi,@katuosoite,@kuvaus,@henkilomaara,@varustelu)",connection);
@@ -48,6 +48,14 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
             }
 
             // '" + tbID.Text + "','" + tbMokinNimi.Text + "','" + tbKatuosoite.Text + "','" + tbPosti.Text + "','" + tbKuvaus.Text + "','" + numHenkilömaara.Value + "','" + clbVarustelu.Items + "',
+            */
+
+            
+
+
+
+
+
         }
 
         private void LisääMökki_Load(object sender, EventArgs e)

@@ -31,5 +31,18 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
             LisääMökki lm = new LisääMökki();
             lm.ShowDialog();
         }
+
+        private void dgMokkiFillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.mokkiTableAdapter.dgMokkiFill(this.villageNewbiesDataSet.mokki);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
