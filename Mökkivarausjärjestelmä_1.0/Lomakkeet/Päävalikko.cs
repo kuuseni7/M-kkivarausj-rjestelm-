@@ -39,5 +39,10 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         {
             Close();
         }
+
+        private void Päävalikko_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

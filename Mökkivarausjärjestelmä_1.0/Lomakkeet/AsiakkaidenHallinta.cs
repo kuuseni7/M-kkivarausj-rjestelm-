@@ -16,5 +16,20 @@ namespace Mökkivarausjärjestelmä_1._0
         {
             InitializeComponent();
         }
+
+        private void asiakasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.asiakasBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.villageNewbiesDataSet);
+
+        }
+
+        private void AsiakkaidenHallinta_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'villageNewbiesDataSet.asiakas' table. You can move, or remove it, as needed.
+            this.asiakasTableAdapter.Fill(this.villageNewbiesDataSet.asiakas);
+
+        }
     }
 }

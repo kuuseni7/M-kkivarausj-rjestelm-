@@ -137,6 +137,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VillageNewbiesDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Lomakkeet\AsiakkaidenHallinta.resx">
+      <DependentUpon>AsiakkaidenHallinta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\LisaaMokki.resx">
       <DependentUpon>LisaaMokki.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +163,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Lomakkeet\VarausLomake.resx">
       <DependentUpon>VarausLomake.cs</DependentUpon>
@@ -214,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aarniorakka.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

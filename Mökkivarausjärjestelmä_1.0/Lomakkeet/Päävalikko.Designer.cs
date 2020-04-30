@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panelPäävalikko = new System.Windows.Forms.Panel();
-            this.lbOtsikko = new System.Windows.Forms.Label();
-            this.lbOtsikko2 = new System.Windows.Forms.Label();
-            this.btnToimialue = new System.Windows.Forms.Button();
-            this.btnVaraukset = new System.Windows.Forms.Button();
-            this.btnAsiakkaat = new System.Windows.Forms.Button();
             this.btnSulje = new System.Windows.Forms.Button();
+            this.btnAsiakkaat = new System.Windows.Forms.Button();
+            this.btnVaraukset = new System.Windows.Forms.Button();
+            this.btnToimialue = new System.Windows.Forms.Button();
+            this.lbOtsikko2 = new System.Windows.Forms.Label();
+            this.lbOtsikko = new System.Windows.Forms.Label();
+            this.pbKuva = new System.Windows.Forms.PictureBox();
             this.panelPäävalikko.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKuva)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPäävalikko
@@ -43,6 +45,7 @@
             this.panelPäävalikko.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPäävalikko.Controls.Add(this.pbKuva);
             this.panelPäävalikko.Controls.Add(this.btnSulje);
             this.panelPäävalikko.Controls.Add(this.btnAsiakkaat);
             this.panelPäävalikko.Controls.Add(this.btnVaraukset);
@@ -54,17 +57,45 @@
             this.panelPäävalikko.Size = new System.Drawing.Size(568, 557);
             this.panelPäävalikko.TabIndex = 0;
             // 
-            // lbOtsikko
+            // btnSulje
             // 
-            this.lbOtsikko.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbOtsikko.AutoSize = true;
-            this.lbOtsikko.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOtsikko.Location = new System.Drawing.Point(194, 11);
-            this.lbOtsikko.Name = "lbOtsikko";
-            this.lbOtsikko.Size = new System.Drawing.Size(180, 25);
-            this.lbOtsikko.TabIndex = 0;
-            this.lbOtsikko.Text = "Village Newbies";
-            this.lbOtsikko.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSulje.Location = new System.Drawing.Point(461, 531);
+            this.btnSulje.Name = "btnSulje";
+            this.btnSulje.Size = new System.Drawing.Size(104, 23);
+            this.btnSulje.TabIndex = 6;
+            this.btnSulje.Text = "Sulje";
+            this.btnSulje.UseVisualStyleBackColor = true;
+            this.btnSulje.Click += new System.EventHandler(this.btnSulje_Click);
+            // 
+            // btnAsiakkaat
+            // 
+            this.btnAsiakkaat.Location = new System.Drawing.Point(232, 499);
+            this.btnAsiakkaat.Name = "btnAsiakkaat";
+            this.btnAsiakkaat.Size = new System.Drawing.Size(104, 23);
+            this.btnAsiakkaat.TabIndex = 5;
+            this.btnAsiakkaat.Text = "Asiakkaat";
+            this.btnAsiakkaat.UseVisualStyleBackColor = true;
+            this.btnAsiakkaat.Click += new System.EventHandler(this.btnAsiakkaat_Click);
+            // 
+            // btnVaraukset
+            // 
+            this.btnVaraukset.Location = new System.Drawing.Point(232, 470);
+            this.btnVaraukset.Name = "btnVaraukset";
+            this.btnVaraukset.Size = new System.Drawing.Size(104, 23);
+            this.btnVaraukset.TabIndex = 4;
+            this.btnVaraukset.Text = "Varaukset";
+            this.btnVaraukset.UseVisualStyleBackColor = true;
+            this.btnVaraukset.Click += new System.EventHandler(this.btnVaraukset_Click);
+            // 
+            // btnToimialue
+            // 
+            this.btnToimialue.Location = new System.Drawing.Point(232, 441);
+            this.btnToimialue.Name = "btnToimialue";
+            this.btnToimialue.Size = new System.Drawing.Size(104, 23);
+            this.btnToimialue.TabIndex = 2;
+            this.btnToimialue.Text = "Toimialueet";
+            this.btnToimialue.UseVisualStyleBackColor = true;
+            this.btnToimialue.Click += new System.EventHandler(this.btnToimialue_Click);
             // 
             // lbOtsikko2
             // 
@@ -78,45 +109,27 @@
             this.lbOtsikko2.Text = "Mökkivarausjärjestelmä";
             this.lbOtsikko2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnToimialue
+            // lbOtsikko
             // 
-            this.btnToimialue.Location = new System.Drawing.Point(232, 364);
-            this.btnToimialue.Name = "btnToimialue";
-            this.btnToimialue.Size = new System.Drawing.Size(104, 23);
-            this.btnToimialue.TabIndex = 2;
-            this.btnToimialue.Text = "Toimialueet";
-            this.btnToimialue.UseVisualStyleBackColor = true;
-            this.btnToimialue.Click += new System.EventHandler(this.btnToimialue_Click);
+            this.lbOtsikko.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbOtsikko.AutoSize = true;
+            this.lbOtsikko.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOtsikko.Location = new System.Drawing.Point(194, 11);
+            this.lbOtsikko.Name = "lbOtsikko";
+            this.lbOtsikko.Size = new System.Drawing.Size(180, 25);
+            this.lbOtsikko.TabIndex = 0;
+            this.lbOtsikko.Text = "Village Newbies";
+            this.lbOtsikko.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnVaraukset
+            // pbKuva
             // 
-            this.btnVaraukset.Location = new System.Drawing.Point(232, 393);
-            this.btnVaraukset.Name = "btnVaraukset";
-            this.btnVaraukset.Size = new System.Drawing.Size(104, 23);
-            this.btnVaraukset.TabIndex = 4;
-            this.btnVaraukset.Text = "Varaukset";
-            this.btnVaraukset.UseVisualStyleBackColor = true;
-            this.btnVaraukset.Click += new System.EventHandler(this.btnVaraukset_Click);
-            // 
-            // btnAsiakkaat
-            // 
-            this.btnAsiakkaat.Location = new System.Drawing.Point(232, 422);
-            this.btnAsiakkaat.Name = "btnAsiakkaat";
-            this.btnAsiakkaat.Size = new System.Drawing.Size(104, 23);
-            this.btnAsiakkaat.TabIndex = 5;
-            this.btnAsiakkaat.Text = "Asiakkaat";
-            this.btnAsiakkaat.UseVisualStyleBackColor = true;
-            this.btnAsiakkaat.Click += new System.EventHandler(this.btnAsiakkaat_Click);
-            // 
-            // btnSulje
-            // 
-            this.btnSulje.Location = new System.Drawing.Point(461, 531);
-            this.btnSulje.Name = "btnSulje";
-            this.btnSulje.Size = new System.Drawing.Size(104, 23);
-            this.btnSulje.TabIndex = 6;
-            this.btnSulje.Text = "Sulje";
-            this.btnSulje.UseVisualStyleBackColor = true;
-            this.btnSulje.Click += new System.EventHandler(this.btnSulje_Click);
+            this.pbKuva.Image = global::Mökkivarausjärjestelmä_1._0.Properties.Resources.aarniorakka;
+            this.pbKuva.Location = new System.Drawing.Point(9, 63);
+            this.pbKuva.Name = "pbKuva";
+            this.pbKuva.Size = new System.Drawing.Size(556, 372);
+            this.pbKuva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbKuva.TabIndex = 7;
+            this.pbKuva.TabStop = false;
             // 
             // Päävalikko
             // 
@@ -126,8 +139,10 @@
             this.Controls.Add(this.panelPäävalikko);
             this.Name = "Päävalikko";
             this.Text = "Päävalikko";
+            this.Load += new System.EventHandler(this.Päävalikko_Load);
             this.panelPäävalikko.ResumeLayout(false);
             this.panelPäävalikko.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKuva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,5 +156,6 @@
         private System.Windows.Forms.Button btnToimialue;
         private System.Windows.Forms.Label lbOtsikko2;
         private System.Windows.Forms.Label lbOtsikko;
+        private System.Windows.Forms.PictureBox pbKuva;
     }
 }
