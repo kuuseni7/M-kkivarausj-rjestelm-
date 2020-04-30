@@ -68,6 +68,7 @@
             // 
             // cbToimialue
             // 
+            this.cbToimialue.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.toimintaalueBindingSource, "toimintaalue_id", true));
             this.cbToimialue.DataSource = this.toimintaalueBindingSource;
             this.cbToimialue.DisplayMember = "nimi";
             this.cbToimialue.FormattingEnabled = true;
@@ -76,7 +77,6 @@
             this.cbToimialue.Size = new System.Drawing.Size(121, 21);
             this.cbToimialue.TabIndex = 1;
             this.cbToimialue.ValueMember = "toimintaalue_id";
-            this.cbToimialue.SelectedValueChanged += new System.EventHandler(this.cbToimialue_SelectedValueChanged);
             // 
             // toimintaalueBindingSource
             // 
@@ -196,6 +196,7 @@
             this.btnPaivita.TabIndex = 5;
             this.btnPaivita.Text = "Päivitä";
             this.btnPaivita.UseVisualStyleBackColor = true;
+            this.btnPaivita.Click += new System.EventHandler(this.btnPaivita_Click);
             // 
             // dgMokkiFillToolStrip
             // 

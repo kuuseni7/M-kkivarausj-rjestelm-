@@ -12,7 +12,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 {
     public partial class ToimialueidenHallinta : Form
     {
-        DataSet ds = new DataSet();
+        //DataTable dt = new DataTable();
         public ToimialueidenHallinta()
         {
             InitializeComponent();
@@ -23,13 +23,17 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
             // TODO: This line of code loads data into the 'villageNewbiesDataSet.toimintaalue' table. You can move, or remove it, as needed.
             this.toimintaalueTableAdapter.Fill(this.villageNewbiesDataSet.toimintaalue);
             // TODO: This line of code loads data into the 'villageNewbiesDataSet.mokki' table. You can move, or remove it, as needed.
+            
             this.mokkiTableAdapter.Fill(this.villageNewbiesDataSet.mokki);
-            dgMokki.DataSource = ds.Tables[0];
+            //dgMokki.DataSource = dt;
+            
         }
-        private void sortData(object value)
+        private void sortData(int value)
         {
-            DataView dv = new DataView();
-            dv = new DataView(ds.Tables[0], "toimintaalue_id='" + value + "'", "toimintaalue_id Desc", DataViewRowState.CurrentRows);
+            //(dgMokki.DataSource as DataTable).DefaultView.RowFilter =         
+            
+            
+            //dataSort = new DataView(villageNewbiesDataSet.Tables[2], "toimintaalue_id='" + value + "'", "toimintaalue_id Desc", DataViewRowState.CurrentRows);
         }
 
         private void btnLisaa_Click(object sender, EventArgs e)
@@ -54,7 +58,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         private void cbToimialue_SelectedValueChanged(object sender, EventArgs e)
         {
 
-            sortData(cbToimialue.SelectedValue);
+            
 
 
             /*var value = cbToimialue.SelectedValue;
@@ -64,6 +68,11 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
                 case 0:
                     DataGridViewComboBoxEditingControl
             }*/
+        }
+
+        private void btnPaivita_Click(object sender, EventArgs e)
+        {
+            //sortData(cbToimialue.SelectedIndex);
         }
     }
 }
