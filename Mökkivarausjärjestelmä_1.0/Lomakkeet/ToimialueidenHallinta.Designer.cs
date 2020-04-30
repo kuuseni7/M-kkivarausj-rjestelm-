@@ -76,6 +76,7 @@
             this.cbToimialue.Size = new System.Drawing.Size(121, 21);
             this.cbToimialue.TabIndex = 1;
             this.cbToimialue.ValueMember = "toimintaalue_id";
+            this.cbToimialue.SelectedValueChanged += new System.EventHandler(this.cbToimialue_SelectedValueChanged);
             // 
             // toimintaalueBindingSource
             // 
@@ -103,6 +104,7 @@
             this.dgMokki.DataSource = this.mokkiBindingSource;
             this.dgMokki.Location = new System.Drawing.Point(12, 115);
             this.dgMokki.Name = "dgMokki";
+            this.dgMokki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMokki.Size = new System.Drawing.Size(843, 323);
             this.dgMokki.TabIndex = 2;
             // 
@@ -180,7 +182,7 @@
             // lbLisaaMokki
             // 
             this.lbLisaaMokki.AutoSize = true;
-            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 22);
+            this.lbLisaaMokki.Location = new System.Drawing.Point(227, 28);
             this.lbLisaaMokki.Name = "lbLisaaMokki";
             this.lbLisaaMokki.Size = new System.Drawing.Size(66, 13);
             this.lbLisaaMokki.TabIndex = 4;
@@ -217,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 458);
+            this.ClientSize = new System.Drawing.Size(892, 460);
             this.Controls.Add(this.dgMokkiFillToolStrip);
             this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.lbLisaaMokki);
