@@ -22,5 +22,10 @@ namespace Mökkivarausjärjestelmä_1._0
             if (dtpAloitus.Value < DateTime.Now)
                 MessageBox.Show("Virheellinen valinta");
         }
+
+        private void VarausLomake_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

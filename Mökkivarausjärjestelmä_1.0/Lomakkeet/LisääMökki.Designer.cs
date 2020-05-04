@@ -46,12 +46,14 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.lbToimialue = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
+            this.mokkiTableAdapter1 = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.mokkiTableAdapter();
+            this.asiakasTableAdapter1 = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.asiakasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.numHenkilömaara)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbID
@@ -207,19 +209,27 @@
             this.comboBox1.TabIndex = 17;
             this.comboBox1.ValueMember = "toimintaalue_id";
             // 
-            // villageNewbiesDataSet
-            // 
-            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
-            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // toimintaalueBindingSource
             // 
             this.toimintaalueBindingSource.DataMember = "toimintaalue";
             this.toimintaalueBindingSource.DataSource = this.villageNewbiesDataSet;
             // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // toimintaalueTableAdapter
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
+            // 
+            // mokkiTableAdapter1
+            // 
+            this.mokkiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // asiakasTableAdapter1
+            // 
+            this.asiakasTableAdapter1.ClearBeforeFill = true;
             // 
             // LisääMökki
             // 
@@ -247,8 +257,8 @@
             this.Text = "LisääMökki";
             this.Load += new System.EventHandler(this.LisääMökki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numHenkilömaara)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +286,7 @@
         private VillageNewbiesDataSet villageNewbiesDataSet;
         private System.Windows.Forms.BindingSource toimintaalueBindingSource;
         private VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
+        private ProjektiDataTableAdapters.mokkiTableAdapter mokkiTableAdapter1;
+        private ProjektiDataTableAdapters.asiakasTableAdapter asiakasTableAdapter1;
     }
 }

@@ -28,6 +28,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
                 connection.Open();
                 //String query = ("INSERT INTO mokki (mokki_id,postinro,mokkinimi,katuosoite,kuvaus,henkilomaara,varustelu) VALUES(@mokki_id,@postinro,@mokkinimi,@katuosoite,@kuvaus,@henkilomaara,@varustelu)",connection);
                 OdbcCommand command = new OdbcCommand("INSERT INTO mokki (mokki_id,postinro,mokkinimi,katuosoite,kuvaus,henkilomaara,varustelu) VALUES(@mokki_id,@postinro,@mokkinimi,@katuosoite,@kuvaus,@henkilomaara,@varustelu)", connection);
+                asiakasTableAdapter1.Insert()
 
                 command.Parameters.AddWithValue("@mokki_id", tbID.Text);
                 command.Parameters.AddWithValue("@postinro", tbMokinNimi.Text);

@@ -47,13 +47,13 @@
             this.dtpAloitus = new System.Windows.Forms.DateTimePicker();
             this.btnHae = new System.Windows.Forms.Button();
             this.pnlVarausLomake = new System.Windows.Forms.Panel();
-            this.tbKuvaus = new System.Windows.Forms.TextBox();
-            this.lbVarustelu = new System.Windows.Forms.Label();
-            this.lbKuvaus = new System.Windows.Forms.Label();
-            this.lbToimintaalue = new System.Windows.Forms.Label();
-            this.lbAloitus = new System.Windows.Forms.Label();
-            this.lbLoppu = new System.Windows.Forms.Label();
             this.tbVarustelu = new System.Windows.Forms.TextBox();
+            this.lbLoppu = new System.Windows.Forms.Label();
+            this.lbAloitus = new System.Windows.Forms.Label();
+            this.lbToimintaalue = new System.Windows.Forms.Label();
+            this.lbKuvaus = new System.Windows.Forms.Label();
+            this.lbVarustelu = new System.Windows.Forms.Label();
+            this.tbKuvaus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
             this.pnlVarausLomake.SuspendLayout();
             this.SuspendLayout();
@@ -236,59 +236,6 @@
             this.pnlVarausLomake.Size = new System.Drawing.Size(800, 450);
             this.pnlVarausLomake.TabIndex = 1;
             // 
-            // tbKuvaus
-            // 
-            this.tbKuvaus.Location = new System.Drawing.Point(12, 311);
-            this.tbKuvaus.Multiline = true;
-            this.tbKuvaus.Name = "tbKuvaus";
-            this.tbKuvaus.Size = new System.Drawing.Size(185, 124);
-            this.tbKuvaus.TabIndex = 48;
-            // 
-            // lbVarustelu
-            // 
-            this.lbVarustelu.AutoSize = true;
-            this.lbVarustelu.Location = new System.Drawing.Point(298, 295);
-            this.lbVarustelu.Name = "lbVarustelu";
-            this.lbVarustelu.Size = new System.Drawing.Size(54, 13);
-            this.lbVarustelu.TabIndex = 49;
-            this.lbVarustelu.Text = "Varustelu:";
-            // 
-            // lbKuvaus
-            // 
-            this.lbKuvaus.AutoSize = true;
-            this.lbKuvaus.Location = new System.Drawing.Point(12, 295);
-            this.lbKuvaus.Name = "lbKuvaus";
-            this.lbKuvaus.Size = new System.Drawing.Size(46, 13);
-            this.lbKuvaus.TabIndex = 50;
-            this.lbKuvaus.Text = "Kuvaus:";
-            // 
-            // lbToimintaalue
-            // 
-            this.lbToimintaalue.AutoSize = true;
-            this.lbToimintaalue.Location = new System.Drawing.Point(9, 21);
-            this.lbToimintaalue.Name = "lbToimintaalue";
-            this.lbToimintaalue.Size = new System.Drawing.Size(73, 13);
-            this.lbToimintaalue.TabIndex = 51;
-            this.lbToimintaalue.Text = "Toiminta-alue:";
-            // 
-            // lbAloitus
-            // 
-            this.lbAloitus.AutoSize = true;
-            this.lbAloitus.Location = new System.Drawing.Point(190, 41);
-            this.lbAloitus.Name = "lbAloitus";
-            this.lbAloitus.Size = new System.Drawing.Size(84, 13);
-            this.lbAloitus.TabIndex = 52;
-            this.lbAloitus.Text = "Varauksen alku:";
-            // 
-            // lbLoppu
-            // 
-            this.lbLoppu.AutoSize = true;
-            this.lbLoppu.Location = new System.Drawing.Point(190, 72);
-            this.lbLoppu.Name = "lbLoppu";
-            this.lbLoppu.Size = new System.Drawing.Size(90, 13);
-            this.lbLoppu.TabIndex = 53;
-            this.lbLoppu.Text = "Varauksen loppu:";
-            // 
             // tbVarustelu
             // 
             this.tbVarustelu.Location = new System.Drawing.Point(301, 311);
@@ -300,6 +247,59 @@
             this.tbVarustelu.Text = "Astianpesukone\r\nAutonlämmitystolppa\r\nKuivauskaappi\r\nPyykinpesukone\r\nTakka\r\nSility" +
     "svälineet\r\nWifi";
             // 
+            // lbLoppu
+            // 
+            this.lbLoppu.AutoSize = true;
+            this.lbLoppu.Location = new System.Drawing.Point(190, 72);
+            this.lbLoppu.Name = "lbLoppu";
+            this.lbLoppu.Size = new System.Drawing.Size(90, 13);
+            this.lbLoppu.TabIndex = 53;
+            this.lbLoppu.Text = "Varauksen loppu:";
+            // 
+            // lbAloitus
+            // 
+            this.lbAloitus.AutoSize = true;
+            this.lbAloitus.Location = new System.Drawing.Point(190, 41);
+            this.lbAloitus.Name = "lbAloitus";
+            this.lbAloitus.Size = new System.Drawing.Size(84, 13);
+            this.lbAloitus.TabIndex = 52;
+            this.lbAloitus.Text = "Varauksen alku:";
+            // 
+            // lbToimintaalue
+            // 
+            this.lbToimintaalue.AutoSize = true;
+            this.lbToimintaalue.Location = new System.Drawing.Point(9, 21);
+            this.lbToimintaalue.Name = "lbToimintaalue";
+            this.lbToimintaalue.Size = new System.Drawing.Size(73, 13);
+            this.lbToimintaalue.TabIndex = 51;
+            this.lbToimintaalue.Text = "Toiminta-alue:";
+            // 
+            // lbKuvaus
+            // 
+            this.lbKuvaus.AutoSize = true;
+            this.lbKuvaus.Location = new System.Drawing.Point(12, 295);
+            this.lbKuvaus.Name = "lbKuvaus";
+            this.lbKuvaus.Size = new System.Drawing.Size(46, 13);
+            this.lbKuvaus.TabIndex = 50;
+            this.lbKuvaus.Text = "Kuvaus:";
+            // 
+            // lbVarustelu
+            // 
+            this.lbVarustelu.AutoSize = true;
+            this.lbVarustelu.Location = new System.Drawing.Point(298, 295);
+            this.lbVarustelu.Name = "lbVarustelu";
+            this.lbVarustelu.Size = new System.Drawing.Size(54, 13);
+            this.lbVarustelu.TabIndex = 49;
+            this.lbVarustelu.Text = "Varustelu:";
+            // 
+            // tbKuvaus
+            // 
+            this.tbKuvaus.Location = new System.Drawing.Point(12, 311);
+            this.tbKuvaus.Multiline = true;
+            this.tbKuvaus.Name = "tbKuvaus";
+            this.tbKuvaus.Size = new System.Drawing.Size(185, 124);
+            this.tbKuvaus.TabIndex = 48;
+            // 
             // VarausLomake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +308,7 @@
             this.Controls.Add(this.pnlVarausLomake);
             this.Name = "VarausLomake";
             this.Text = "VarausLomake";
+            this.Load += new System.EventHandler(this.VarausLomake_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).EndInit();
             this.pnlVarausLomake.ResumeLayout(false);
             this.pnlVarausLomake.PerformLayout();
