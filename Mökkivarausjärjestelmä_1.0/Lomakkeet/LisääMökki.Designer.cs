@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lbID = new System.Windows.Forms.Label();
             this.lbPosti = new System.Windows.Forms.Label();
             this.lbMokkiNimi = new System.Windows.Forms.Label();
             this.lbKatu = new System.Windows.Forms.Label();
@@ -43,27 +42,16 @@
             this.lbVarustelu = new System.Windows.Forms.Label();
             this.tbKuvaus = new System.Windows.Forms.TextBox();
             this.btnLisaa = new System.Windows.Forms.Button();
-            this.tbID = new System.Windows.Forms.TextBox();
             this.lbToimialue = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbToimintaAlue = new System.Windows.Forms.ComboBox();
             this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.toimintaalueTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter();
-            this.mokkiTableAdapter1 = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.mokkiTableAdapter();
-            this.asiakasTableAdapter1 = new Mökkivarausjärjestelmä_1._0.ProjektiDataTableAdapters.asiakasTableAdapter();
+            this.mokkiTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.numHenkilömaara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(12, 30);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(21, 13);
-            this.lbID.TabIndex = 0;
-            this.lbID.Text = "ID:";
             // 
             // lbPosti
             // 
@@ -77,7 +65,7 @@
             // lbMokkiNimi
             // 
             this.lbMokkiNimi.AutoSize = true;
-            this.lbMokkiNimi.Location = new System.Drawing.Point(47, 30);
+            this.lbMokkiNimi.Location = new System.Drawing.Point(12, 30);
             this.lbMokkiNimi.Name = "lbMokkiNimi";
             this.lbMokkiNimi.Size = new System.Drawing.Size(60, 13);
             this.lbMokkiNimi.TabIndex = 2;
@@ -126,9 +114,9 @@
             // 
             // tbMokinNimi
             // 
-            this.tbMokinNimi.Location = new System.Drawing.Point(50, 46);
+            this.tbMokinNimi.Location = new System.Drawing.Point(15, 46);
             this.tbMokinNimi.Name = "tbMokinNimi";
-            this.tbMokinNimi.Size = new System.Drawing.Size(139, 20);
+            this.tbMokinNimi.Size = new System.Drawing.Size(174, 20);
             this.tbMokinNimi.TabIndex = 9;
             // 
             // numHenkilömaara
@@ -174,40 +162,34 @@
             // 
             // btnLisaa
             // 
-            this.btnLisaa.Location = new System.Drawing.Point(206, 207);
+            this.btnLisaa.Location = new System.Drawing.Point(349, 250);
             this.btnLisaa.Name = "btnLisaa";
-            this.btnLisaa.Size = new System.Drawing.Size(75, 94);
+            this.btnLisaa.Size = new System.Drawing.Size(122, 51);
             this.btnLisaa.TabIndex = 15;
             this.btnLisaa.Text = "Lisää mökki";
             this.btnLisaa.UseVisualStyleBackColor = true;
             this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
             // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(15, 46);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(29, 20);
-            this.tbID.TabIndex = 6;
-            // 
             // lbToimialue
             // 
             this.lbToimialue.AutoSize = true;
-            this.lbToimialue.Location = new System.Drawing.Point(302, 191);
+            this.lbToimialue.Location = new System.Drawing.Point(346, 207);
             this.lbToimialue.Name = "lbToimialue";
             this.lbToimialue.Size = new System.Drawing.Size(73, 13);
             this.lbToimialue.TabIndex = 16;
             this.lbToimialue.Text = "Toiminta-alue:";
             // 
-            // comboBox1
+            // cbToimintaAlue
             // 
-            this.comboBox1.DataSource = this.toimintaalueBindingSource;
-            this.comboBox1.DisplayMember = "nimi";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(305, 208);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.ValueMember = "toimintaalue_id";
+            this.cbToimintaAlue.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.toimintaalueBindingSource, "toimintaalue_id", true));
+            this.cbToimintaAlue.DataSource = this.toimintaalueBindingSource;
+            this.cbToimintaAlue.DisplayMember = "nimi";
+            this.cbToimintaAlue.FormattingEnabled = true;
+            this.cbToimintaAlue.Location = new System.Drawing.Point(349, 224);
+            this.cbToimintaAlue.Name = "cbToimintaAlue";
+            this.cbToimintaAlue.Size = new System.Drawing.Size(121, 21);
+            this.cbToimintaAlue.TabIndex = 17;
+            this.cbToimintaAlue.ValueMember = "toimintaalue_id";
             // 
             // toimintaalueBindingSource
             // 
@@ -227,16 +209,12 @@
             // 
             this.mokkiTableAdapter1.ClearBeforeFill = true;
             // 
-            // asiakasTableAdapter1
-            // 
-            this.asiakasTableAdapter1.ClearBeforeFill = true;
-            // 
             // LisääMökki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 313);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbToimintaAlue);
             this.Controls.Add(this.lbToimialue);
             this.Controls.Add(this.btnLisaa);
             this.Controls.Add(this.tbKuvaus);
@@ -246,13 +224,11 @@
             this.Controls.Add(this.tbMokinNimi);
             this.Controls.Add(this.tbPosti);
             this.Controls.Add(this.tbKatuosoite);
-            this.Controls.Add(this.tbID);
             this.Controls.Add(this.lbHenkilo);
             this.Controls.Add(this.lbKuvaus);
             this.Controls.Add(this.lbKatu);
             this.Controls.Add(this.lbMokkiNimi);
             this.Controls.Add(this.lbPosti);
-            this.Controls.Add(this.lbID);
             this.Name = "LisääMökki";
             this.Text = "LisääMökki";
             this.Load += new System.EventHandler(this.LisääMökki_Load);
@@ -265,8 +241,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbPosti;
         private System.Windows.Forms.Label lbMokkiNimi;
         private System.Windows.Forms.Label lbKatu;
@@ -280,13 +254,11 @@
         private System.Windows.Forms.Label lbVarustelu;
         private System.Windows.Forms.TextBox tbKuvaus;
         private System.Windows.Forms.Button btnLisaa;
-        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label lbToimialue;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbToimintaAlue;
         private VillageNewbiesDataSet villageNewbiesDataSet;
         private System.Windows.Forms.BindingSource toimintaalueBindingSource;
         private VillageNewbiesDataSetTableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
-        private ProjektiDataTableAdapters.mokkiTableAdapter mokkiTableAdapter1;
-        private ProjektiDataTableAdapters.asiakasTableAdapter asiakasTableAdapter1;
+        private VillageNewbiesDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter1;
     }
 }

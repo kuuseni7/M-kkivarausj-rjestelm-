@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters;
 
 namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 {
@@ -26,29 +27,38 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
             try
             {
                 connection.Open();
-                //String query = ("INSERT INTO mokki (mokki_id,postinro,mokkinimi,katuosoite,kuvaus,henkilomaara,varustelu) VALUES(@mokki_id,@postinro,@mokkinimi,@katuosoite,@kuvaus,@henkilomaara,@varustelu)",connection);
-                OdbcCommand command = new OdbcCommand("INSERT INTO mokki (mokki_id,postinro,mokkinimi,katuosoite,kuvaus,henkilomaara,varustelu) VALUES(@mokki_id,@postinro,@mokkinimi,@katuosoite,@kuvaus,@henkilomaara,@varustelu)", connection);
-                asiakasTableAdapter1.Insert()
+                
+                mokkiTableAdapter mokki = new mokkiTableAdapter();
+                string str = "";
+                if (clbVarustelu.CheckedItems.Count > 0)
+                {
+                    for (int i = 0; i < clbVarustelu.CheckedItems.Count; i++)
+                    {
+                        if (str == "")
+                        {
+                            str = clbVarustelu.CheckedItems[i].ToString();
+                        }
+                        else
+                        {
+                            str += ",\n" + clbVarustelu.CheckedItems[i].ToString();
+                        }
+                    }
 
-                command.Parameters.AddWithValue("@mokki_id", tbID.Text);
-                command.Parameters.AddWithValue("@postinro", tbMokinNimi.Text);
-                command.Parameters.AddWithValue("@mokkinimi", tbKatuosoite.Text);
-                command.Parameters.AddWithValue("@katuosoite", tbPosti.Text);
-                command.Parameters.AddWithValue("@kuvaus", tbKuvaus.Text);
-                command.Parameters.AddWithValue("@henkilomaara", numHenkilömaara.Text);
-                command.Parameters.AddWithValue("@varustelu", clbVarustelu.Text);
-                command.ExecuteNonQuery();
-                //OdbcDataAdapter odbcDataAdapter = new OdbcDataAdapter(query);
-                //odbcDataAdapter.SelectCommand.ExecuteNonQuery();
+                }
+                
+                mokki.InsertMokki(cbToimintaAlue.SelectedIndex,tbPosti.Text, tbMokinNimi.Text, tbKatuosoite.Text, tbKuvaus.Text, (int)numHenkilömaara.Value, str);
+                mokki.Update(villageNewbiesDataSet.mokki);
+                
+               
+                MessageBox.Show("Mökki lisätty järjestelmään onnistuneesti!");
                 connection.Close();
-                //MessageBox.Show("Mökki lisätty järjestelmään onnistuneesti!");
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message,"Virhe syötteessä");
             }
-
-            // '" + tbID.Text + "','" + tbMokinNimi.Text + "','" + tbKatuosoite.Text + "','" + tbPosti.Text + "','" + tbKuvaus.Text + "','" + numHenkilömaara.Value + "','" + clbVarustelu.Items + "',
+            
+           
             
             
             

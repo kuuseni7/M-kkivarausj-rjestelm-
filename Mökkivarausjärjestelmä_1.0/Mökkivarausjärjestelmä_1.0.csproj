@@ -83,12 +83,6 @@
     <Compile Include="Lomakkeet\LaskujenHallinta.Designer.cs">
       <DependentUpon>LaskujenHallinta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lomakkeet\LisaaMokki.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Lomakkeet\LisaaMokki.Designer.cs">
-      <DependentUpon>LisaaMokki.cs</DependentUpon>
-    </Compile>
     <Compile Include="Lomakkeet\LisääMökki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +95,6 @@
     <Compile Include="Lomakkeet\Päävalikko.Designer.cs">
       <DependentUpon>Päävalikko.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lomakkeet\Testi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Lomakkeet\Testi.Designer.cs">
-      <DependentUpon>Testi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Lomakkeet\ToimialueidenHallinta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +102,6 @@
       <DependentUpon>ToimialueidenHallinta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjektiData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjektiData.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lomakkeet\VarausLomake.cs">
       <SubType>Form</SubType>
@@ -140,17 +123,14 @@
     <EmbeddedResource Include="Lomakkeet\AsiakkaidenHallinta.resx">
       <DependentUpon>AsiakkaidenHallinta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lomakkeet\LisaaMokki.resx">
-      <DependentUpon>LisaaMokki.cs</DependentUpon>
+    <EmbeddedResource Include="Lomakkeet\LaskujenHallinta.resx">
+      <DependentUpon>LaskujenHallinta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\LisääMökki.resx">
       <DependentUpon>LisääMökki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\Päävalikko.resx">
       <DependentUpon>Päävalikko.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lomakkeet\Testi.resx">
-      <DependentUpon>Testi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lomakkeet\ToimialueidenHallinta.resx">
       <DependentUpon>ToimialueidenHallinta.cs</DependentUpon>
@@ -169,17 +149,6 @@
       <DependentUpon>VarausLomake.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="ProjektiData.xsc">
-      <DependentUpon>ProjektiData.xsd</DependentUpon>
-    </None>
-    <None Include="ProjektiData.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProjektiData.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProjektiData.xss">
-      <DependentUpon>ProjektiData.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

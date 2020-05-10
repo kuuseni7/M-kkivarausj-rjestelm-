@@ -42,25 +42,13 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
             lm.ShowDialog();
         }
 
-        private void dgMokkiFillToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.mokkiTableAdapter.dgMokkiFill(this.villageNewbiesDataSet.mokki);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       /* private void dgMokkiFillToolStripButton_Click(object sender, EventArgs e)
+        {           
+        }*/
 
         private void cbToimialue_SelectedValueChanged(object sender, EventArgs e)
         {
-
             
-
-
             /*var value = cbToimialue.SelectedValue;
 
             switch(value)
@@ -73,6 +61,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         private void btnPaivita_Click(object sender, EventArgs e)
         {
             //sortData(cbToimialue.SelectedIndex);
+            mokkiTableAdapter.Fill(this.villageNewbiesDataSet.mokki);
         }
     }
 }

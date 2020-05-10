@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbPuhNum = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbPostiNro = new System.Windows.Forms.Label();
@@ -54,14 +55,30 @@
             this.lbKuvaus = new System.Windows.Forms.Label();
             this.lbVarustelu = new System.Windows.Forms.Label();
             this.tbKuvaus = new System.Windows.Forms.TextBox();
+            this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
+            this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
+            this.asiakasTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.asiakasTableAdapter();
+            this.lbPalvelut = new System.Windows.Forms.Label();
+            this.clbPalvelut = new System.Windows.Forms.CheckedListBox();
+            this.lbLoppuSumma = new System.Windows.Forms.Label();
+            this.lbLaskettuSumma = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
             this.pnlVarausLomake.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPuhNum
             // 
             this.lbPuhNum.AutoSize = true;
-            this.lbPuhNum.Location = new System.Drawing.Point(521, 173);
+            this.lbPuhNum.Location = new System.Drawing.Point(693, 176);
             this.lbPuhNum.Name = "lbPuhNum";
             this.lbPuhNum.Size = new System.Drawing.Size(80, 13);
             this.lbPuhNum.TabIndex = 45;
@@ -70,7 +87,7 @@
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(521, 147);
+            this.lbEmail.Location = new System.Drawing.Point(693, 150);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(63, 13);
             this.lbEmail.TabIndex = 44;
@@ -79,7 +96,7 @@
             // lbPostiNro
             // 
             this.lbPostiNro.AutoSize = true;
-            this.lbPostiNro.Location = new System.Drawing.Point(521, 121);
+            this.lbPostiNro.Location = new System.Drawing.Point(693, 124);
             this.lbPostiNro.Name = "lbPostiNro";
             this.lbPostiNro.Size = new System.Drawing.Size(68, 13);
             this.lbPostiNro.TabIndex = 43;
@@ -88,7 +105,7 @@
             // lbOsoite
             // 
             this.lbOsoite.AutoSize = true;
-            this.lbOsoite.Location = new System.Drawing.Point(521, 95);
+            this.lbOsoite.Location = new System.Drawing.Point(693, 98);
             this.lbOsoite.Name = "lbOsoite";
             this.lbOsoite.Size = new System.Drawing.Size(58, 13);
             this.lbOsoite.TabIndex = 42;
@@ -97,7 +114,7 @@
             // lbSukuNimi
             // 
             this.lbSukuNimi.AutoSize = true;
-            this.lbSukuNimi.Location = new System.Drawing.Point(521, 66);
+            this.lbSukuNimi.Location = new System.Drawing.Point(693, 69);
             this.lbSukuNimi.Name = "lbSukuNimi";
             this.lbSukuNimi.Size = new System.Drawing.Size(53, 13);
             this.lbSukuNimi.TabIndex = 41;
@@ -106,7 +123,7 @@
             // lbEtuNimi
             // 
             this.lbEtuNimi.AutoSize = true;
-            this.lbEtuNimi.Location = new System.Drawing.Point(521, 38);
+            this.lbEtuNimi.Location = new System.Drawing.Point(693, 41);
             this.lbEtuNimi.Name = "lbEtuNimi";
             this.lbEtuNimi.Size = new System.Drawing.Size(44, 13);
             this.lbEtuNimi.TabIndex = 40;
@@ -114,49 +131,49 @@
             // 
             // tbPuhNum
             // 
-            this.tbPuhNum.Location = new System.Drawing.Point(607, 173);
+            this.tbPuhNum.Location = new System.Drawing.Point(779, 176);
             this.tbPuhNum.Name = "tbPuhNum";
             this.tbPuhNum.Size = new System.Drawing.Size(100, 20);
             this.tbPuhNum.TabIndex = 39;
             // 
             // tbSPosti
             // 
-            this.tbSPosti.Location = new System.Drawing.Point(606, 147);
+            this.tbSPosti.Location = new System.Drawing.Point(778, 150);
             this.tbSPosti.Name = "tbSPosti";
             this.tbSPosti.Size = new System.Drawing.Size(100, 20);
             this.tbSPosti.TabIndex = 38;
             // 
             // tbPostinumero
             // 
-            this.tbPostinumero.Location = new System.Drawing.Point(606, 121);
+            this.tbPostinumero.Location = new System.Drawing.Point(778, 124);
             this.tbPostinumero.Name = "tbPostinumero";
             this.tbPostinumero.Size = new System.Drawing.Size(100, 20);
             this.tbPostinumero.TabIndex = 37;
             // 
             // tbOsoite
             // 
-            this.tbOsoite.Location = new System.Drawing.Point(606, 95);
+            this.tbOsoite.Location = new System.Drawing.Point(778, 98);
             this.tbOsoite.Name = "tbOsoite";
             this.tbOsoite.Size = new System.Drawing.Size(100, 20);
             this.tbOsoite.TabIndex = 36;
             // 
             // tbSukunimi
             // 
-            this.tbSukunimi.Location = new System.Drawing.Point(606, 66);
+            this.tbSukunimi.Location = new System.Drawing.Point(778, 69);
             this.tbSukunimi.Name = "tbSukunimi";
             this.tbSukunimi.Size = new System.Drawing.Size(100, 20);
             this.tbSukunimi.TabIndex = 35;
             // 
             // tbEtunimi
             // 
-            this.tbEtunimi.Location = new System.Drawing.Point(606, 38);
+            this.tbEtunimi.Location = new System.Drawing.Point(778, 41);
             this.tbEtunimi.Name = "tbEtunimi";
             this.tbEtunimi.Size = new System.Drawing.Size(100, 20);
             this.tbEtunimi.TabIndex = 34;
             // 
             // btnLuoVaraus
             // 
-            this.btnLuoVaraus.Location = new System.Drawing.Point(607, 285);
+            this.btnLuoVaraus.Location = new System.Drawing.Point(803, 219);
             this.btnLuoVaraus.Name = "btnLuoVaraus";
             this.btnLuoVaraus.Size = new System.Drawing.Size(75, 23);
             this.btnLuoVaraus.TabIndex = 33;
@@ -173,11 +190,21 @@
             // 
             // dgvMokki
             // 
+            this.dgvMokki.AutoGenerateColumns = false;
             this.dgvMokki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMokki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mokkinimiDataGridViewTextBoxColumn,
+            this.katuosoiteDataGridViewTextBoxColumn,
+            this.postinroDataGridViewTextBoxColumn,
+            this.kuvausDataGridViewTextBoxColumn,
+            this.henkilomaaraDataGridViewTextBoxColumn,
+            this.varusteluDataGridViewTextBoxColumn});
+            this.dgvMokki.DataSource = this.mokkiBindingSource;
             this.dgvMokki.Location = new System.Drawing.Point(12, 111);
             this.dgvMokki.Name = "dgvMokki";
-            this.dgvMokki.Size = new System.Drawing.Size(474, 177);
+            this.dgvMokki.Size = new System.Drawing.Size(644, 177);
             this.dgvMokki.TabIndex = 31;
+            this.dgvMokki.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMokki_RowHeaderMouseClick);
             // 
             // dtpLopetus
             // 
@@ -205,6 +232,10 @@
             // 
             // pnlVarausLomake
             // 
+            this.pnlVarausLomake.Controls.Add(this.lbLaskettuSumma);
+            this.pnlVarausLomake.Controls.Add(this.lbLoppuSumma);
+            this.pnlVarausLomake.Controls.Add(this.clbPalvelut);
+            this.pnlVarausLomake.Controls.Add(this.lbPalvelut);
             this.pnlVarausLomake.Controls.Add(this.tbVarustelu);
             this.pnlVarausLomake.Controls.Add(this.lbLoppu);
             this.pnlVarausLomake.Controls.Add(this.lbAloitus);
@@ -233,7 +264,7 @@
             this.pnlVarausLomake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVarausLomake.Location = new System.Drawing.Point(0, 0);
             this.pnlVarausLomake.Name = "pnlVarausLomake";
-            this.pnlVarausLomake.Size = new System.Drawing.Size(800, 450);
+            this.pnlVarausLomake.Size = new System.Drawing.Size(910, 630);
             this.pnlVarausLomake.TabIndex = 1;
             // 
             // tbVarustelu
@@ -241,11 +272,8 @@
             this.tbVarustelu.Location = new System.Drawing.Point(301, 311);
             this.tbVarustelu.Multiline = true;
             this.tbVarustelu.Name = "tbVarustelu";
-            this.tbVarustelu.ReadOnly = true;
             this.tbVarustelu.Size = new System.Drawing.Size(185, 124);
             this.tbVarustelu.TabIndex = 54;
-            this.tbVarustelu.Text = "Astianpesukone\r\nAutonlämmitystolppa\r\nKuivauskaappi\r\nPyykinpesukone\r\nTakka\r\nSility" +
-    "svälineet\r\nWifi";
             // 
             // lbLoppu
             // 
@@ -300,11 +328,108 @@
             this.tbKuvaus.Size = new System.Drawing.Size(185, 124);
             this.tbKuvaus.TabIndex = 48;
             // 
+            // mokkinimiDataGridViewTextBoxColumn
+            // 
+            this.mokkinimiDataGridViewTextBoxColumn.DataPropertyName = "mokkinimi";
+            this.mokkinimiDataGridViewTextBoxColumn.HeaderText = "mokkinimi";
+            this.mokkinimiDataGridViewTextBoxColumn.Name = "mokkinimiDataGridViewTextBoxColumn";
+            // 
+            // katuosoiteDataGridViewTextBoxColumn
+            // 
+            this.katuosoiteDataGridViewTextBoxColumn.DataPropertyName = "katuosoite";
+            this.katuosoiteDataGridViewTextBoxColumn.HeaderText = "katuosoite";
+            this.katuosoiteDataGridViewTextBoxColumn.Name = "katuosoiteDataGridViewTextBoxColumn";
+            // 
+            // postinroDataGridViewTextBoxColumn
+            // 
+            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
+            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
+            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            // 
+            // kuvausDataGridViewTextBoxColumn
+            // 
+            this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
+            // 
+            // henkilomaaraDataGridViewTextBoxColumn
+            // 
+            this.henkilomaaraDataGridViewTextBoxColumn.DataPropertyName = "henkilomaara";
+            this.henkilomaaraDataGridViewTextBoxColumn.HeaderText = "henkilomaara";
+            this.henkilomaaraDataGridViewTextBoxColumn.Name = "henkilomaaraDataGridViewTextBoxColumn";
+            // 
+            // varusteluDataGridViewTextBoxColumn
+            // 
+            this.varusteluDataGridViewTextBoxColumn.DataPropertyName = "varustelu";
+            this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
+            this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
+            // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mokkiTableAdapter
+            // 
+            this.mokkiTableAdapter.ClearBeforeFill = true;
+            // 
+            // asiakasTableAdapter1
+            // 
+            this.asiakasTableAdapter1.ClearBeforeFill = true;
+            // 
+            // lbPalvelut
+            // 
+            this.lbPalvelut.AutoSize = true;
+            this.lbPalvelut.Location = new System.Drawing.Point(542, 311);
+            this.lbPalvelut.Name = "lbPalvelut";
+            this.lbPalvelut.Size = new System.Drawing.Size(81, 13);
+            this.lbPalvelut.TabIndex = 55;
+            this.lbPalvelut.Text = "Valitse palvelut:";
+            // 
+            // clbPalvelut
+            // 
+            this.clbPalvelut.CheckOnClick = true;
+            this.clbPalvelut.FormattingEnabled = true;
+            this.clbPalvelut.Items.AddRange(new object[] {
+            "Porosafari\t\tHinta: 50e",
+            "Koiravaljakkoajelu\tHinta: 50e",
+            "Airsoftaus\t\tHinta: 50e",
+            "Hevosajelu\t\tHinta: 50e",
+            "Vesiskootteriajelu\tHinta: 50e"});
+            this.clbPalvelut.Location = new System.Drawing.Point(540, 338);
+            this.clbPalvelut.Name = "clbPalvelut";
+            this.clbPalvelut.Size = new System.Drawing.Size(216, 79);
+            this.clbPalvelut.TabIndex = 56;
+            this.clbPalvelut.SelectedIndexChanged += new System.EventHandler(this.clbPalvelut_SelectedIndexChanged);
+            // 
+            // lbLoppuSumma
+            // 
+            this.lbLoppuSumma.AutoSize = true;
+            this.lbLoppuSumma.Location = new System.Drawing.Point(506, 468);
+            this.lbLoppuSumma.Name = "lbLoppuSumma";
+            this.lbLoppuSumma.Size = new System.Drawing.Size(45, 13);
+            this.lbLoppuSumma.TabIndex = 57;
+            this.lbLoppuSumma.Text = "Summa:";
+            // 
+            // lbLaskettuSumma
+            // 
+            this.lbLaskettuSumma.AutoSize = true;
+            this.lbLaskettuSumma.Location = new System.Drawing.Point(578, 468);
+            this.lbLaskettuSumma.Name = "lbLaskettuSumma";
+            this.lbLaskettuSumma.Size = new System.Drawing.Size(98, 13);
+            this.lbLaskettuSumma.TabIndex = 58;
+            this.lbLaskettuSumma.Text = "Summa tulee tähän";
+            // 
             // VarausLomake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(910, 630);
             this.Controls.Add(this.pnlVarausLomake);
             this.Name = "VarausLomake";
             this.Text = "VarausLomake";
@@ -312,6 +437,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).EndInit();
             this.pnlVarausLomake.ResumeLayout(false);
             this.pnlVarausLomake.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,5 +470,19 @@
         private System.Windows.Forms.Label lbLoppu;
         private System.Windows.Forms.Label lbAloitus;
         private System.Windows.Forms.TextBox tbVarustelu;
+        private VillageNewbiesDataSet villageNewbiesDataSet;
+        private System.Windows.Forms.BindingSource mokkiBindingSource;
+        private VillageNewbiesDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mokkinimiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn katuosoiteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
+        private VillageNewbiesDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter1;
+        private System.Windows.Forms.Label lbLaskettuSumma;
+        private System.Windows.Forms.Label lbLoppuSumma;
+        private System.Windows.Forms.CheckedListBox clbPalvelut;
+        private System.Windows.Forms.Label lbPalvelut;
     }
 }
