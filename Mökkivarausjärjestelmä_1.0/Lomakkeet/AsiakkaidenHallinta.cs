@@ -17,13 +17,7 @@ namespace Mökkivarausjärjestelmä_1._0
             InitializeComponent();
         }
 
-        private void asiakasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.asiakasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.villageNewbiesDataSet);
-
-        }
+        
 
         private void AsiakkaidenHallinta_Load(object sender, EventArgs e)
         {

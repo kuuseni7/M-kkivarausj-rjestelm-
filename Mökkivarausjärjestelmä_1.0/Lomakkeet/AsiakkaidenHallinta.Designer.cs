@@ -32,7 +32,6 @@
             this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.asiakasTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.asiakasTableAdapter();
-            this.tableAdapterManager = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.TableAdapterManager();
             this.dgvAsiakas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +40,15 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbVaraus = new System.Windows.Forms.Label();
+            this.btnPaivita = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbLasku = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // villageNewbiesDataSet
@@ -62,19 +65,6 @@
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.asiakasTableAdapter = this.asiakasTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.laskuTableAdapter = null;
-            this.tableAdapterManager.mokkiTableAdapter = null;
-            this.tableAdapterManager.palveluTableAdapter = null;
-            this.tableAdapterManager.postiTableAdapter = null;
-            this.tableAdapterManager.toimintaalueTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.varauksen_palvelutTableAdapter = null;
-            this.tableAdapterManager.varausTableAdapter = null;
-            // 
             // dgvAsiakas
             // 
             this.dgvAsiakas.AutoGenerateColumns = false;
@@ -90,7 +80,7 @@
             this.dgvAsiakas.DataSource = this.asiakasBindingSource;
             this.dgvAsiakas.Location = new System.Drawing.Point(11, 12);
             this.dgvAsiakas.Name = "dgvAsiakas";
-            this.dgvAsiakas.Size = new System.Drawing.Size(727, 203);
+            this.dgvAsiakas.Size = new System.Drawing.Size(743, 203);
             this.dgvAsiakas.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -135,31 +125,59 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "puhelinnro";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // label1
+            // lbVaraus
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.lbVaraus.AutoSize = true;
+            this.lbVaraus.Location = new System.Drawing.Point(12, 264);
+            this.lbVaraus.Name = "lbVaraus";
+            this.lbVaraus.Size = new System.Drawing.Size(43, 13);
+            this.lbVaraus.TabIndex = 2;
+            this.lbVaraus.Text = "Varaus:";
             // 
-            // button1
+            // btnPaivita
             // 
-            this.button1.Location = new System.Drawing.Point(13, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPaivita.Location = new System.Drawing.Point(12, 221);
+            this.btnPaivita.Name = "btnPaivita";
+            this.btnPaivita.Size = new System.Drawing.Size(75, 29);
+            this.btnPaivita.TabIndex = 3;
+            this.btnPaivita.Text = "Päivitä";
+            this.btnPaivita.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 280);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(413, 151);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(431, 280);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(319, 267);
+            this.textBox1.TabIndex = 5;
+            // 
+            // lbLasku
+            // 
+            this.lbLasku.AutoSize = true;
+            this.lbLasku.Location = new System.Drawing.Point(428, 264);
+            this.lbLasku.Name = "lbLasku";
+            this.lbLasku.Size = new System.Drawing.Size(39, 13);
+            this.lbLasku.TabIndex = 6;
+            this.lbLasku.Text = "Lasku:";
             // 
             // AsiakkaidenHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 657);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(762, 657);
+            this.Controls.Add(this.lbLasku);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnPaivita);
+            this.Controls.Add(this.lbVaraus);
             this.Controls.Add(this.dgvAsiakas);
             this.Name = "AsiakkaidenHallinta";
             this.Text = "AsiakkaidenHallinta";
@@ -167,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,7 +196,6 @@
         private VillageNewbiesDataSet villageNewbiesDataSet;
         private System.Windows.Forms.BindingSource asiakasBindingSource;
         private VillageNewbiesDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
-        private VillageNewbiesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvAsiakas;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -186,7 +204,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbVaraus;
+        private System.Windows.Forms.Button btnPaivita;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbLasku;
     }
 }

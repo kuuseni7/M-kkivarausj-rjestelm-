@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Odbc;
+using Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters;
+using System.IO;
 
 namespace Mökkivarausjärjestelmä_1._0
 {
@@ -16,17 +19,45 @@ namespace Mökkivarausjärjestelmä_1._0
         {
             InitializeComponent();
         }
-
+        
         private void dtpAloitus_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpAloitus.Value < DateTime.Now)
+            
+
+
+            if (dtpAloitus.Value < DateTime.Today)
+            {
                 MessageBox.Show("Virheellinen päivämäärä");
-                dtpAloitus.Value = DateTime.Now;
+                dtpAloitus.Value = DateTime.Today;
+            }                
+            else
+            {
+                dtpAloitus.Value = dtpAloitus.Value;
+                dtpLopetus.Value = dtpAloitus.Value;
+            }
+            
+        }
+        
+        private void dtpLopetus_ValueChanged(object sender, EventArgs e)
+        {
+
+            
             if (dtpLopetus.Value < dtpAloitus.Value)
             {
                 MessageBox.Show("Päättymis päivän täytyy olla tulevaisuudessa");
-                dtpLopetus.Value = DateTime.Now;
+                dtpLopetus.Value = dtpAloitus.Value;
             }
+           
+
+            
+            
+            
+
+            /*if (dtpLopetus.Value < dtpAloitus.Value)
+            {
+                
+                dtpLopetus.Value = DateTime.Now;
+            }*/
         }
 
         private void VarausLomake_Load(object sender, EventArgs e)
@@ -49,5 +80,76 @@ namespace Mökkivarausjärjestelmä_1._0
             int summa = (lkm * 50);
             lbLaskettuSumma.Text = summa.ToString();
         }
+
+        private void btnLuoVaraus_Click(object sender, EventArgs e)
+        {
+            luoAsiakas();
+        }
+
+        private void luoAsiakas()
+        {
+            try
+            {
+                OdbcConnection connection = new OdbcConnection(@"Dsn=Village Newbies; uid=root");
+                connection.Open();
+
+                asiakasTableAdapter asiakas = new asiakasTableAdapter();
+                string str = "";
+
+                if (clbPalvelut.CheckedItems.Count > 0)
+                {
+                    for (int i = 0; i < clbPalvelut.CheckedItems.Count; i++)
+                    {
+                        if (str == "")
+                        {
+                            str = clbPalvelut.CheckedItems[i].ToString();
+                        }
+                        else
+                        {
+                            str += ",\n" + clbPalvelut.CheckedItems[i].ToString();
+                        }
+                    }
+
+                }
+
+                asiakas.InsertAsiakas(tbPostinumero.Text,tbEtunimi.Text, tbSukunimi.Text, tbOsoite.Text, tbSPosti.Text, tbPuhNum.Text);
+                asiakas.Update(villageNewbiesDataSet.asiakas);
+
+
+                MessageBox.Show("Varaus lisätty järjestelmään onnistuneesti!");
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Virhe syötteessä");
+            }
+
+        }
+
+        private void luoLasku()
+        {
+            asiakasTableAdapter asiakas = new asiakasTableAdapter();
+            laskuTableAdapter lasku = new laskuTableAdapter();
+            decimal summa = decimal.Parse(lbLaskettuSumma.Text);
+            decimal alv = (decimal.Parse(lbLaskettuSumma.Text) * (decimal)0.24);
+            lasku.InsertVaraus(summa,alv);
+        }
+
+        private void tulostaLasku()
+        {
+            string asikas = "LASKU" + ": " + tbEtunimi.Text + " " + tbSukunimi.Text;
+           // StreamWriter swLasku = new StreamWriter();
+
+        }
+
+        private void dtpAloitus_Validating(object sender, CancelEventArgs e)
+        {
+            //if ()
+            {
+
+            }
+        }
+
+        
     }
 }
