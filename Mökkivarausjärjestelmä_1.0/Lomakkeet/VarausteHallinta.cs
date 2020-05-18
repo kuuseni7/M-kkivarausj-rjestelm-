@@ -16,5 +16,11 @@ namespace Mökkivarausjärjestelmä_1._0
         {
             InitializeComponent();
         }
+
+        private void btnLisää_Click(object sender, EventArgs e)
+        {
+            VarausLomake vl = new VarausLomake();
+            vl.ShowDialog();
+        }
     }
 }

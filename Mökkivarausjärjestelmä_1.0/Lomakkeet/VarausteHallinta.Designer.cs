@@ -36,12 +36,12 @@
             this.clbPalvelut = new System.Windows.Forms.CheckedListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lbAsiakas = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnLisää = new System.Windows.Forms.Button();
+            this.btnMuokkaa = new System.Windows.Forms.Button();
+            this.btnPoista = new System.Windows.Forms.Button();
+            this.lbPoista = new System.Windows.Forms.Label();
+            this.lbMuokkaa = new System.Windows.Forms.Label();
+            this.lbLisää = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,71 +115,72 @@
             this.lbAsiakas.TabIndex = 59;
             this.lbAsiakas.Text = "Asiakas:";
             // 
-            // button1
+            // btnLisää
             // 
-            this.button1.Location = new System.Drawing.Point(245, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLisää.Location = new System.Drawing.Point(245, 226);
+            this.btnLisää.Name = "btnLisää";
+            this.btnLisää.Size = new System.Drawing.Size(75, 23);
+            this.btnLisää.TabIndex = 60;
+            this.btnLisää.Text = "Lisää";
+            this.btnLisää.UseVisualStyleBackColor = true;
+            this.btnLisää.Click += new System.EventHandler(this.btnLisää_Click);
             // 
-            // button2
+            // btnMuokkaa
             // 
-            this.button2.Location = new System.Drawing.Point(334, 226);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 61;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMuokkaa.Location = new System.Drawing.Point(334, 226);
+            this.btnMuokkaa.Name = "btnMuokkaa";
+            this.btnMuokkaa.Size = new System.Drawing.Size(75, 23);
+            this.btnMuokkaa.TabIndex = 61;
+            this.btnMuokkaa.Text = "Muokkaa";
+            this.btnMuokkaa.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPoista
             // 
-            this.button3.Location = new System.Drawing.Point(422, 226);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 62;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPoista.Location = new System.Drawing.Point(422, 226);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(75, 23);
+            this.btnPoista.TabIndex = 62;
+            this.btnPoista.Text = "Poista";
+            this.btnPoista.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbPoista
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(419, 210);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Asiakas:";
+            this.lbPoista.AutoSize = true;
+            this.lbPoista.Location = new System.Drawing.Point(419, 210);
+            this.lbPoista.Name = "lbPoista";
+            this.lbPoista.Size = new System.Drawing.Size(39, 13);
+            this.lbPoista.TabIndex = 63;
+            this.lbPoista.Text = "Poista:";
             // 
-            // label2
+            // lbMuokkaa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(344, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Asiakas:";
+            this.lbMuokkaa.AutoSize = true;
+            this.lbMuokkaa.Location = new System.Drawing.Point(331, 210);
+            this.lbMuokkaa.Name = "lbMuokkaa";
+            this.lbMuokkaa.Size = new System.Drawing.Size(55, 13);
+            this.lbMuokkaa.TabIndex = 64;
+            this.lbMuokkaa.Text = "Muokkaa:";
             // 
-            // label3
+            // lbLisää
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(242, 210);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Asiakas:";
+            this.lbLisää.AutoSize = true;
+            this.lbLisää.Location = new System.Drawing.Point(242, 210);
+            this.lbLisää.Name = "lbLisää";
+            this.lbLisää.Size = new System.Drawing.Size(35, 13);
+            this.lbLisää.TabIndex = 65;
+            this.lbLisää.Text = "Lisää:";
             // 
             // VarausteHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbLisää);
+            this.Controls.Add(this.lbMuokkaa);
+            this.Controls.Add(this.lbPoista);
+            this.Controls.Add(this.btnPoista);
+            this.Controls.Add(this.btnMuokkaa);
+            this.Controls.Add(this.btnLisää);
             this.Controls.Add(this.lbAsiakas);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.clbPalvelut);
@@ -206,11 +207,11 @@
         private System.Windows.Forms.CheckedListBox clbPalvelut;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label lbAsiakas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnLisää;
+        private System.Windows.Forms.Button btnMuokkaa;
+        private System.Windows.Forms.Button btnPoista;
+        private System.Windows.Forms.Label lbPoista;
+        private System.Windows.Forms.Label lbMuokkaa;
+        private System.Windows.Forms.Label lbLisää;
     }
 }

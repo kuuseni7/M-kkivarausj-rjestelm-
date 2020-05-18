@@ -46,7 +46,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 
                 }
                 
-                mokki.InsertMokki(cbToimintaAlue.SelectedIndex,tbPosti.Text, tbMokinNimi.Text, tbKatuosoite.Text, tbKuvaus.Text, (int)numHenkilömaara.Value, str);
+                mokki.InsertMokki(cbToimintaAlue.SelectedIndex + 1,tbPosti.Text, tbMokinNimi.Text, tbKatuosoite.Text, tbKuvaus.Text, (int)numHenkilömaara.Value, str);
                 mokki.Update(villageNewbiesDataSet.mokki);
                 
                

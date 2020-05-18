@@ -43,14 +43,6 @@
             this.tbEtunimi = new System.Windows.Forms.TextBox();
             this.btnLuoVaraus = new System.Windows.Forms.Button();
             this.dgvMokki = new System.Windows.Forms.DataGridView();
-            this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.dtpLopetus = new System.Windows.Forms.DateTimePicker();
             this.dtpAloitus = new System.Windows.Forms.DateTimePicker();
             this.btnHae = new System.Windows.Forms.Button();
@@ -65,12 +57,24 @@
             this.lbKuvaus = new System.Windows.Forms.Label();
             this.lbVarustelu = new System.Windows.Forms.Label();
             this.tbKuvaus = new System.Windows.Forms.TextBox();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
             this.asiakasTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.asiakasTableAdapter();
+            this.laskuTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.laskuTableAdapter();
+            this.varausTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.varausTableAdapter();
+            this.varauksen_palvelutTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.varauksen_palvelutTableAdapter();
+            this.mokki_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
+            this.pnlVarausLomake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
-            this.pnlVarausLomake.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbPuhNum
@@ -184,6 +188,7 @@
             this.dgvMokki.AutoGenerateColumns = false;
             this.dgvMokki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMokki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mokki_id,
             this.mokkinimiDataGridViewTextBoxColumn,
             this.katuosoiteDataGridViewTextBoxColumn,
             this.postinroDataGridViewTextBoxColumn,
@@ -196,52 +201,6 @@
             this.dgvMokki.Size = new System.Drawing.Size(644, 231);
             this.dgvMokki.TabIndex = 31;
             this.dgvMokki.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMokki_RowHeaderMouseClick);
-            // 
-            // mokkinimiDataGridViewTextBoxColumn
-            // 
-            this.mokkinimiDataGridViewTextBoxColumn.DataPropertyName = "mokkinimi";
-            this.mokkinimiDataGridViewTextBoxColumn.HeaderText = "mokkinimi";
-            this.mokkinimiDataGridViewTextBoxColumn.Name = "mokkinimiDataGridViewTextBoxColumn";
-            // 
-            // katuosoiteDataGridViewTextBoxColumn
-            // 
-            this.katuosoiteDataGridViewTextBoxColumn.DataPropertyName = "katuosoite";
-            this.katuosoiteDataGridViewTextBoxColumn.HeaderText = "katuosoite";
-            this.katuosoiteDataGridViewTextBoxColumn.Name = "katuosoiteDataGridViewTextBoxColumn";
-            // 
-            // postinroDataGridViewTextBoxColumn
-            // 
-            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
-            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
-            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
-            // 
-            // kuvausDataGridViewTextBoxColumn
-            // 
-            this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
-            // 
-            // henkilomaaraDataGridViewTextBoxColumn
-            // 
-            this.henkilomaaraDataGridViewTextBoxColumn.DataPropertyName = "henkilomaara";
-            this.henkilomaaraDataGridViewTextBoxColumn.HeaderText = "henkilomaara";
-            this.henkilomaaraDataGridViewTextBoxColumn.Name = "henkilomaaraDataGridViewTextBoxColumn";
-            // 
-            // varusteluDataGridViewTextBoxColumn
-            // 
-            this.varusteluDataGridViewTextBoxColumn.DataPropertyName = "varustelu";
-            this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
-            this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
-            // 
-            // mokkiBindingSource
-            // 
-            this.mokkiBindingSource.DataMember = "mokki";
-            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
-            // 
-            // villageNewbiesDataSet
-            // 
-            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
-            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpLopetus
             // 
@@ -258,7 +217,6 @@
             this.dtpAloitus.Size = new System.Drawing.Size(200, 20);
             this.dtpAloitus.TabIndex = 29;
             this.dtpAloitus.ValueChanged += new System.EventHandler(this.dtpAloitus_ValueChanged);
-            this.dtpAloitus.Validating += new System.ComponentModel.CancelEventHandler(this.dtpAloitus_Validating);
             // 
             // btnHae
             // 
@@ -399,6 +357,16 @@
             this.tbKuvaus.Size = new System.Drawing.Size(196, 106);
             this.tbKuvaus.TabIndex = 48;
             // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mokkiTableAdapter
             // 
             this.mokkiTableAdapter.ClearBeforeFill = true;
@@ -406,6 +374,60 @@
             // asiakasTableAdapter1
             // 
             this.asiakasTableAdapter1.ClearBeforeFill = true;
+            // 
+            // laskuTableAdapter1
+            // 
+            this.laskuTableAdapter1.ClearBeforeFill = true;
+            // 
+            // varausTableAdapter1
+            // 
+            this.varausTableAdapter1.ClearBeforeFill = true;
+            // 
+            // varauksen_palvelutTableAdapter1
+            // 
+            this.varauksen_palvelutTableAdapter1.ClearBeforeFill = true;
+            // 
+            // mokki_id
+            // 
+            this.mokki_id.DataPropertyName = "mokki_id";
+            this.mokki_id.HeaderText = "Mökki ID";
+            this.mokki_id.Name = "mokki_id";
+            // 
+            // mokkinimiDataGridViewTextBoxColumn
+            // 
+            this.mokkinimiDataGridViewTextBoxColumn.DataPropertyName = "mokkinimi";
+            this.mokkinimiDataGridViewTextBoxColumn.HeaderText = "mokkinimi";
+            this.mokkinimiDataGridViewTextBoxColumn.Name = "mokkinimiDataGridViewTextBoxColumn";
+            // 
+            // katuosoiteDataGridViewTextBoxColumn
+            // 
+            this.katuosoiteDataGridViewTextBoxColumn.DataPropertyName = "katuosoite";
+            this.katuosoiteDataGridViewTextBoxColumn.HeaderText = "katuosoite";
+            this.katuosoiteDataGridViewTextBoxColumn.Name = "katuosoiteDataGridViewTextBoxColumn";
+            // 
+            // postinroDataGridViewTextBoxColumn
+            // 
+            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
+            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
+            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            // 
+            // kuvausDataGridViewTextBoxColumn
+            // 
+            this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
+            // 
+            // henkilomaaraDataGridViewTextBoxColumn
+            // 
+            this.henkilomaaraDataGridViewTextBoxColumn.DataPropertyName = "henkilomaara";
+            this.henkilomaaraDataGridViewTextBoxColumn.HeaderText = "henkilomaara";
+            this.henkilomaaraDataGridViewTextBoxColumn.Name = "henkilomaaraDataGridViewTextBoxColumn";
+            // 
+            // varusteluDataGridViewTextBoxColumn
+            // 
+            this.varusteluDataGridViewTextBoxColumn.DataPropertyName = "varustelu";
+            this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
+            this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
             // 
             // VarausLomake
             // 
@@ -417,10 +439,10 @@
             this.Text = "VarausLomake";
             this.Load += new System.EventHandler(this.VarausLomake_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             this.pnlVarausLomake.ResumeLayout(false);
             this.pnlVarausLomake.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,16 +475,20 @@
         private VillageNewbiesDataSet villageNewbiesDataSet;
         private System.Windows.Forms.BindingSource mokkiBindingSource;
         private VillageNewbiesDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
+        private VillageNewbiesDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter1;
+        private System.Windows.Forms.Label lbLaskettuSumma;
+        private System.Windows.Forms.Label lbLoppuSumma;
+        private System.Windows.Forms.CheckedListBox clbPalvelut;
+        private System.Windows.Forms.Label lbPalvelut;
+        private VillageNewbiesDataSetTableAdapters.laskuTableAdapter laskuTableAdapter1;
+        private VillageNewbiesDataSetTableAdapters.varausTableAdapter varausTableAdapter1;
+        private VillageNewbiesDataSetTableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mokki_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn mokkinimiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn katuosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
-        private VillageNewbiesDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter1;
-        private System.Windows.Forms.Label lbLaskettuSumma;
-        private System.Windows.Forms.Label lbLoppuSumma;
-        private System.Windows.Forms.CheckedListBox clbPalvelut;
-        private System.Windows.Forms.Label lbPalvelut;
     }
 }
