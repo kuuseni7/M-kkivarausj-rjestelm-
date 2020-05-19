@@ -25,7 +25,7 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
 
         private void btnVaraukset_Click(object sender, EventArgs e)
         {
-            VarausLomake vl = new VarausLomake();
+            VarausteHallinta vl = new VarausteHallinta();
             vl.ShowDialog();
         }
 
@@ -43,6 +43,12 @@ namespace Mökkivarausjärjestelmä_1._0.Lomakkeet
         private void Päävalikko_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLasku_Click(object sender, EventArgs e)
+        {
+            LaskujenHallinta lh = new LaskujenHallinta();
+            lh.ShowDialog();
         }
     }
 }

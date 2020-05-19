@@ -157,7 +157,7 @@
               <Mapping SourceColumn="alv" DataSetColumn="alv" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="vnConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AlvQuery" Modifier="Public" Name="AlvQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="AlvQuery">
+              <DbSource ConnectionRef="vnConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AlvQuery" Modifier="Public" Name="AlvQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AlvQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        summa, alv
@@ -166,7 +166,7 @@ FROM            lasku</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="vnConnection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertLasku" Modifier="Public" Name="InsertLasku" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertLasku">
+              <DbSource ConnectionRef="vnConnection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertLasku" Modifier="Public" Name="InsertLasku" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertLasku">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `lasku` ( `summa`, `alv`) VALUES (?, ?, ?, ?)</CommandText>
@@ -603,6 +603,15 @@ FROM            lasku</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
+              <DbSource ConnectionRef="vnConnection (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="VarausDataQuery" GetMethodModifier="Public" GetMethodName="VarausDataQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="VarausDataQuery" UserSourceName="VarausDataQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        mokki.mokki_id, varaus.varattu_pvm, varaus.vahvistus_pvm, varaus.varattu_alkupvm, varaus.varattu_loppupvm
+FROM            varaus, mokki</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
         </Tables>
@@ -613,7 +622,7 @@ FROM            lasku</CommandText>
   <xs:element name="VillageNewbiesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="VillageNewbiesDataSet" msprop:Generator_UserDSName="VillageNewbiesDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="asiakas" msprop:Generator_TableClassName="asiakasDataTable" msprop:Generator_TableVarName="tableasiakas" msprop:Generator_RowChangedName="asiakasRowChanged" msprop:Generator_TablePropName="asiakas" msprop:Generator_RowDeletingName="asiakasRowDeleting" msprop:Generator_RowChangingName="asiakasRowChanging" msprop:Generator_RowEvHandlerName="asiakasRowChangeEventHandler" msprop:Generator_RowDeletedName="asiakasRowDeleted" msprop:Generator_RowClassName="asiakasRow" msprop:Generator_UserTableName="asiakas" msprop:Generator_RowEvArgName="asiakasRowChangeEvent">
+        <xs:element name="asiakas" msprop:Generator_TableClassName="asiakasDataTable" msprop:Generator_TableVarName="tableasiakas" msprop:Generator_TablePropName="asiakas" msprop:Generator_RowDeletingName="asiakasRowDeleting" msprop:Generator_RowChangingName="asiakasRowChanging" msprop:Generator_RowEvHandlerName="asiakasRowChangeEventHandler" msprop:Generator_RowDeletedName="asiakasRowDeleted" msprop:Generator_UserTableName="asiakas" msprop:Generator_RowChangedName="asiakasRowChanged" msprop:Generator_RowEvArgName="asiakasRowChangeEvent" msprop:Generator_RowClassName="asiakasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="asiakas_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnasiakas_id" msprop:Generator_ColumnPropNameInRow="asiakas_id" msprop:Generator_ColumnPropNameInTable="asiakas_idColumn" msprop:Generator_UserColumnName="asiakas_id" type="xs:long" />
@@ -662,7 +671,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="lasku" msprop:Generator_TableClassName="laskuDataTable" msprop:Generator_TableVarName="tablelasku" msprop:Generator_RowChangedName="laskuRowChanged" msprop:Generator_TablePropName="lasku" msprop:Generator_RowDeletingName="laskuRowDeleting" msprop:Generator_RowChangingName="laskuRowChanging" msprop:Generator_RowEvHandlerName="laskuRowChangeEventHandler" msprop:Generator_RowDeletedName="laskuRowDeleted" msprop:Generator_RowClassName="laskuRow" msprop:Generator_UserTableName="lasku" msprop:Generator_RowEvArgName="laskuRowChangeEvent">
+        <xs:element name="lasku" msprop:Generator_TableClassName="laskuDataTable" msprop:Generator_TableVarName="tablelasku" msprop:Generator_TablePropName="lasku" msprop:Generator_RowDeletingName="laskuRowDeleting" msprop:Generator_RowChangingName="laskuRowChanging" msprop:Generator_RowEvHandlerName="laskuRowChangeEventHandler" msprop:Generator_RowDeletedName="laskuRowDeleted" msprop:Generator_UserTableName="lasku" msprop:Generator_RowChangedName="laskuRowChanged" msprop:Generator_RowEvArgName="laskuRowChangeEvent" msprop:Generator_RowClassName="laskuRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="lasku_id" msprop:Generator_ColumnVarNameInTable="columnlasku_id" msprop:Generator_ColumnPropNameInRow="lasku_id" msprop:Generator_ColumnPropNameInTable="lasku_idColumn" msprop:Generator_UserColumnName="lasku_id" type="xs:int" />
@@ -672,7 +681,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="mokki" msprop:Generator_TableClassName="mokkiDataTable" msprop:Generator_TableVarName="tablemokki" msprop:Generator_RowChangedName="mokkiRowChanged" msprop:Generator_TablePropName="mokki" msprop:Generator_RowDeletingName="mokkiRowDeleting" msprop:Generator_RowChangingName="mokkiRowChanging" msprop:Generator_RowEvHandlerName="mokkiRowChangeEventHandler" msprop:Generator_RowDeletedName="mokkiRowDeleted" msprop:Generator_RowClassName="mokkiRow" msprop:Generator_UserTableName="mokki" msprop:Generator_RowEvArgName="mokkiRowChangeEvent">
+        <xs:element name="mokki" msprop:Generator_TableClassName="mokkiDataTable" msprop:Generator_TableVarName="tablemokki" msprop:Generator_TablePropName="mokki" msprop:Generator_RowDeletingName="mokkiRowDeleting" msprop:Generator_RowChangingName="mokkiRowChanging" msprop:Generator_RowEvHandlerName="mokkiRowChangeEventHandler" msprop:Generator_RowDeletedName="mokkiRowDeleted" msprop:Generator_UserTableName="mokki" msprop:Generator_RowChangedName="mokkiRowChanged" msprop:Generator_RowEvArgName="mokkiRowChangeEvent" msprop:Generator_RowClassName="mokkiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="mokki_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnmokki_id" msprop:Generator_ColumnPropNameInRow="mokki_id" msprop:Generator_ColumnPropNameInTable="mokki_idColumn" msprop:Generator_UserColumnName="mokki_id" type="xs:long" />
@@ -716,7 +725,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="palvelu" msprop:Generator_TableClassName="palveluDataTable" msprop:Generator_TableVarName="tablepalvelu" msprop:Generator_RowChangedName="palveluRowChanged" msprop:Generator_TablePropName="palvelu" msprop:Generator_RowDeletingName="palveluRowDeleting" msprop:Generator_RowChangingName="palveluRowChanging" msprop:Generator_RowEvHandlerName="palveluRowChangeEventHandler" msprop:Generator_RowDeletedName="palveluRowDeleted" msprop:Generator_RowClassName="palveluRow" msprop:Generator_UserTableName="palvelu" msprop:Generator_RowEvArgName="palveluRowChangeEvent">
+        <xs:element name="palvelu" msprop:Generator_TableClassName="palveluDataTable" msprop:Generator_TableVarName="tablepalvelu" msprop:Generator_TablePropName="palvelu" msprop:Generator_RowDeletingName="palveluRowDeleting" msprop:Generator_RowChangingName="palveluRowChanging" msprop:Generator_RowEvHandlerName="palveluRowChangeEventHandler" msprop:Generator_RowDeletedName="palveluRowDeleted" msprop:Generator_UserTableName="palvelu" msprop:Generator_RowChangedName="palveluRowChanged" msprop:Generator_RowEvArgName="palveluRowChangeEvent" msprop:Generator_RowClassName="palveluRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="palvelu_id" msprop:Generator_ColumnVarNameInTable="columnpalvelu_id" msprop:Generator_ColumnPropNameInRow="palvelu_id" msprop:Generator_ColumnPropNameInTable="palvelu_idColumn" msprop:Generator_UserColumnName="palvelu_id" type="xs:long" />
@@ -741,7 +750,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="posti" msprop:Generator_TableClassName="postiDataTable" msprop:Generator_TableVarName="tableposti" msprop:Generator_RowChangedName="postiRowChanged" msprop:Generator_TablePropName="posti" msprop:Generator_RowDeletingName="postiRowDeleting" msprop:Generator_RowChangingName="postiRowChanging" msprop:Generator_RowEvHandlerName="postiRowChangeEventHandler" msprop:Generator_RowDeletedName="postiRowDeleted" msprop:Generator_RowClassName="postiRow" msprop:Generator_UserTableName="posti" msprop:Generator_RowEvArgName="postiRowChangeEvent">
+        <xs:element name="posti" msprop:Generator_TableClassName="postiDataTable" msprop:Generator_TableVarName="tableposti" msprop:Generator_TablePropName="posti" msprop:Generator_RowDeletingName="postiRowDeleting" msprop:Generator_RowChangingName="postiRowChanging" msprop:Generator_RowEvHandlerName="postiRowChangeEventHandler" msprop:Generator_RowDeletedName="postiRowDeleted" msprop:Generator_UserTableName="posti" msprop:Generator_RowChangedName="postiRowChanged" msprop:Generator_RowEvArgName="postiRowChangeEvent" msprop:Generator_RowClassName="postiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="postinro" msprop:Generator_ColumnVarNameInTable="columnpostinro" msprop:Generator_ColumnPropNameInRow="postinro" msprop:Generator_ColumnPropNameInTable="postinroColumn" msprop:Generator_UserColumnName="postinro">
@@ -761,7 +770,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="toimintaalue" msprop:Generator_TableClassName="toimintaalueDataTable" msprop:Generator_TableVarName="tabletoimintaalue" msprop:Generator_RowChangedName="toimintaalueRowChanged" msprop:Generator_TablePropName="toimintaalue" msprop:Generator_RowDeletingName="toimintaalueRowDeleting" msprop:Generator_RowChangingName="toimintaalueRowChanging" msprop:Generator_RowEvHandlerName="toimintaalueRowChangeEventHandler" msprop:Generator_RowDeletedName="toimintaalueRowDeleted" msprop:Generator_RowClassName="toimintaalueRow" msprop:Generator_UserTableName="toimintaalue" msprop:Generator_RowEvArgName="toimintaalueRowChangeEvent">
+        <xs:element name="toimintaalue" msprop:Generator_TableClassName="toimintaalueDataTable" msprop:Generator_TableVarName="tabletoimintaalue" msprop:Generator_TablePropName="toimintaalue" msprop:Generator_RowDeletingName="toimintaalueRowDeleting" msprop:Generator_RowChangingName="toimintaalueRowChanging" msprop:Generator_RowEvHandlerName="toimintaalueRowChangeEventHandler" msprop:Generator_RowDeletedName="toimintaalueRowDeleted" msprop:Generator_UserTableName="toimintaalue" msprop:Generator_RowChangedName="toimintaalueRowChanged" msprop:Generator_RowEvArgName="toimintaalueRowChangeEvent" msprop:Generator_RowClassName="toimintaalueRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="toimintaalue_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntoimintaalue_id" msprop:Generator_ColumnPropNameInRow="toimintaalue_id" msprop:Generator_ColumnPropNameInTable="toimintaalue_idColumn" msprop:Generator_UserColumnName="toimintaalue_id" type="xs:long" />
@@ -775,7 +784,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="varauksen_palvelut" msprop:Generator_TableClassName="varauksen_palvelutDataTable" msprop:Generator_TableVarName="tablevarauksen_palvelut" msprop:Generator_RowChangedName="varauksen_palvelutRowChanged" msprop:Generator_TablePropName="varauksen_palvelut" msprop:Generator_RowDeletingName="varauksen_palvelutRowDeleting" msprop:Generator_RowChangingName="varauksen_palvelutRowChanging" msprop:Generator_RowEvHandlerName="varauksen_palvelutRowChangeEventHandler" msprop:Generator_RowDeletedName="varauksen_palvelutRowDeleted" msprop:Generator_RowClassName="varauksen_palvelutRow" msprop:Generator_UserTableName="varauksen_palvelut" msprop:Generator_RowEvArgName="varauksen_palvelutRowChangeEvent">
+        <xs:element name="varauksen_palvelut" msprop:Generator_TableClassName="varauksen_palvelutDataTable" msprop:Generator_TableVarName="tablevarauksen_palvelut" msprop:Generator_TablePropName="varauksen_palvelut" msprop:Generator_RowDeletingName="varauksen_palvelutRowDeleting" msprop:Generator_RowChangingName="varauksen_palvelutRowChanging" msprop:Generator_RowEvHandlerName="varauksen_palvelutRowChangeEventHandler" msprop:Generator_RowDeletedName="varauksen_palvelutRowDeleted" msprop:Generator_UserTableName="varauksen_palvelut" msprop:Generator_RowChangedName="varauksen_palvelutRowChanged" msprop:Generator_RowEvArgName="varauksen_palvelutRowChangeEvent" msprop:Generator_RowClassName="varauksen_palvelutRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="varaus_id" msprop:Generator_ColumnVarNameInTable="columnvaraus_id" msprop:Generator_ColumnPropNameInRow="varaus_id" msprop:Generator_ColumnPropNameInTable="varaus_idColumn" msprop:Generator_UserColumnName="varaus_id" type="xs:long" />
@@ -784,7 +793,7 @@ FROM            lasku</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="varaus" msprop:Generator_TableClassName="varausDataTable" msprop:Generator_TableVarName="tablevaraus" msprop:Generator_RowChangedName="varausRowChanged" msprop:Generator_TablePropName="varaus" msprop:Generator_RowDeletingName="varausRowDeleting" msprop:Generator_RowChangingName="varausRowChanging" msprop:Generator_RowEvHandlerName="varausRowChangeEventHandler" msprop:Generator_RowDeletedName="varausRowDeleted" msprop:Generator_RowClassName="varausRow" msprop:Generator_UserTableName="varaus" msprop:Generator_RowEvArgName="varausRowChangeEvent">
+        <xs:element name="varaus" msprop:Generator_TableClassName="varausDataTable" msprop:Generator_TableVarName="tablevaraus" msprop:Generator_TablePropName="varaus" msprop:Generator_RowDeletingName="varausRowDeleting" msprop:Generator_RowChangingName="varausRowChanging" msprop:Generator_RowEvHandlerName="varausRowChangeEventHandler" msprop:Generator_RowDeletedName="varausRowDeleted" msprop:Generator_UserTableName="varaus" msprop:Generator_RowChangedName="varausRowChanged" msprop:Generator_RowEvArgName="varausRowChangeEvent" msprop:Generator_RowClassName="varausRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="varaus_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvaraus_id" msprop:Generator_ColumnPropNameInRow="varaus_id" msprop:Generator_ColumnPropNameInTable="varaus_idColumn" msprop:Generator_UserColumnName="varaus_id" type="xs:long" />

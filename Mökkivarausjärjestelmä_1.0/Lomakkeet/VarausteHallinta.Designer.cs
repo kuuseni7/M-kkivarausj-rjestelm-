@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.lbHaku = new System.Windows.Forms.Label();
@@ -35,14 +36,30 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.clbPalvelut = new System.Windows.Forms.CheckedListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.lbAsiakas = new System.Windows.Forms.Label();
             this.btnLisää = new System.Windows.Forms.Button();
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.btnPoista = new System.Windows.Forms.Button();
             this.lbPoista = new System.Windows.Forms.Label();
             this.lbMuokkaa = new System.Windows.Forms.Label();
             this.lbLisää = new System.Windows.Forms.Label();
+            this.lbPaivita = new System.Windows.Forms.Label();
+            this.btnPaivita = new System.Windows.Forms.Button();
+            this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkimokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vahvistuspvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattualkupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattuloppupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
+            this.varausTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.varausTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -79,11 +96,22 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.varausidDataGridViewTextBoxColumn,
+            this.asiakasidDataGridViewTextBoxColumn,
+            this.mokkimokkiidDataGridViewTextBoxColumn,
+            this.varattupvmDataGridViewTextBoxColumn,
+            this.vahvistuspvmDataGridViewTextBoxColumn,
+            this.varattualkupvmDataGridViewTextBoxColumn,
+            this.varattuloppupvmDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.varausBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(245, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(531, 150);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // clbPalvelut
             // 
@@ -105,15 +133,6 @@
             this.monthCalendar1.Location = new System.Drawing.Point(598, 210);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 58;
-            // 
-            // lbAsiakas
-            // 
-            this.lbAsiakas.AutoSize = true;
-            this.lbAsiakas.Location = new System.Drawing.Point(38, 293);
-            this.lbAsiakas.Name = "lbAsiakas";
-            this.lbAsiakas.Size = new System.Drawing.Size(47, 13);
-            this.lbAsiakas.TabIndex = 59;
-            this.lbAsiakas.Text = "Asiakas:";
             // 
             // btnLisää
             // 
@@ -170,18 +189,103 @@
             this.lbLisää.TabIndex = 65;
             this.lbLisää.Text = "Lisää:";
             // 
+            // lbPaivita
+            // 
+            this.lbPaivita.AutoSize = true;
+            this.lbPaivita.Location = new System.Drawing.Point(506, 210);
+            this.lbPaivita.Name = "lbPaivita";
+            this.lbPaivita.Size = new System.Drawing.Size(42, 13);
+            this.lbPaivita.TabIndex = 68;
+            this.lbPaivita.Text = "Päivitä:";
+            // 
+            // btnPaivita
+            // 
+            this.btnPaivita.Location = new System.Drawing.Point(509, 226);
+            this.btnPaivita.Name = "btnPaivita";
+            this.btnPaivita.Size = new System.Drawing.Size(75, 23);
+            this.btnPaivita.TabIndex = 67;
+            this.btnPaivita.Text = "Päivitä";
+            this.btnPaivita.UseVisualStyleBackColor = true;
+            this.btnPaivita.Click += new System.EventHandler(this.btnPaivita_Click);
+            // 
+            // varausidDataGridViewTextBoxColumn
+            // 
+            this.varausidDataGridViewTextBoxColumn.DataPropertyName = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.HeaderText = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.Name = "varausidDataGridViewTextBoxColumn";
+            // 
+            // asiakasidDataGridViewTextBoxColumn
+            // 
+            this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
+            // 
+            // mokkimokkiidDataGridViewTextBoxColumn
+            // 
+            this.mokkimokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_mokki_id";
+            this.mokkimokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_mokki_id";
+            this.mokkimokkiidDataGridViewTextBoxColumn.Name = "mokkimokkiidDataGridViewTextBoxColumn";
+            // 
+            // varattupvmDataGridViewTextBoxColumn
+            // 
+            this.varattupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_pvm";
+            this.varattupvmDataGridViewTextBoxColumn.HeaderText = "varattu_pvm";
+            this.varattupvmDataGridViewTextBoxColumn.Name = "varattupvmDataGridViewTextBoxColumn";
+            // 
+            // vahvistuspvmDataGridViewTextBoxColumn
+            // 
+            this.vahvistuspvmDataGridViewTextBoxColumn.DataPropertyName = "vahvistus_pvm";
+            this.vahvistuspvmDataGridViewTextBoxColumn.HeaderText = "vahvistus_pvm";
+            this.vahvistuspvmDataGridViewTextBoxColumn.Name = "vahvistuspvmDataGridViewTextBoxColumn";
+            // 
+            // varattualkupvmDataGridViewTextBoxColumn
+            // 
+            this.varattualkupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_alkupvm";
+            this.varattualkupvmDataGridViewTextBoxColumn.HeaderText = "varattu_alkupvm";
+            this.varattualkupvmDataGridViewTextBoxColumn.Name = "varattualkupvmDataGridViewTextBoxColumn";
+            // 
+            // varattuloppupvmDataGridViewTextBoxColumn
+            // 
+            this.varattuloppupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_loppupvm";
+            this.varattuloppupvmDataGridViewTextBoxColumn.HeaderText = "varattu_loppupvm";
+            this.varattuloppupvmDataGridViewTextBoxColumn.Name = "varattuloppupvmDataGridViewTextBoxColumn";
+            // 
+            // varausBindingSource
+            // 
+            this.varausBindingSource.DataMember = "varaus";
+            this.varausBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // mokkiTableAdapter
+            // 
+            this.mokkiTableAdapter.ClearBeforeFill = true;
+            // 
+            // varausTableAdapter
+            // 
+            this.varausTableAdapter.ClearBeforeFill = true;
+            // 
             // VarausteHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbPaivita);
+            this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.lbLisää);
             this.Controls.Add(this.lbMuokkaa);
             this.Controls.Add(this.lbPoista);
             this.Controls.Add(this.btnPoista);
             this.Controls.Add(this.btnMuokkaa);
             this.Controls.Add(this.btnLisää);
-            this.Controls.Add(this.lbAsiakas);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.clbPalvelut);
             this.Controls.Add(this.dataGridView1);
@@ -191,7 +295,11 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "VarausteHallinta";
             this.Text = "VarausteHallinta";
+            this.Load += new System.EventHandler(this.VarausteHallinta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,12 +314,25 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckedListBox clbPalvelut;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label lbAsiakas;
         private System.Windows.Forms.Button btnLisää;
         private System.Windows.Forms.Button btnMuokkaa;
         private System.Windows.Forms.Button btnPoista;
         private System.Windows.Forms.Label lbPoista;
         private System.Windows.Forms.Label lbMuokkaa;
         private System.Windows.Forms.Label lbLisää;
+        private VillageNewbiesDataSet villageNewbiesDataSet;
+        private System.Windows.Forms.BindingSource mokkiBindingSource;
+        private VillageNewbiesDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
+        private System.Windows.Forms.BindingSource varausBindingSource;
+        private VillageNewbiesDataSetTableAdapters.varausTableAdapter varausTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varausidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mokkimokkiidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattupvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vahvistuspvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattualkupvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattuloppupvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lbPaivita;
+        private System.Windows.Forms.Button btnPaivita;
     }
 }

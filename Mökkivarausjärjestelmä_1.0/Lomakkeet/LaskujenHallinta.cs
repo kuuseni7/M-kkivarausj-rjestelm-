@@ -15,6 +15,14 @@ namespace Mökkivarausjärjestelmä_1._0
         public LaskujenHallinta()
         {
             InitializeComponent();
+
+        }
+
+        private void LaskujenHallinta_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'villageNewbiesDataSet.lasku' table. You can move, or remove it, as needed.
+            this.laskuTableAdapter.Fill(this.villageNewbiesDataSet.lasku);
+            
         }
     }
 }

@@ -43,6 +43,8 @@
             this.tbEtunimi = new System.Windows.Forms.TextBox();
             this.btnLuoVaraus = new System.Windows.Forms.Button();
             this.dgvMokki = new System.Windows.Forms.DataGridView();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.dtpLopetus = new System.Windows.Forms.DateTimePicker();
             this.dtpAloitus = new System.Windows.Forms.DateTimePicker();
             this.btnHae = new System.Windows.Forms.Button();
@@ -57,13 +59,12 @@
             this.lbKuvaus = new System.Windows.Forms.Label();
             this.lbVarustelu = new System.Windows.Forms.Label();
             this.tbKuvaus = new System.Windows.Forms.TextBox();
-            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.villageNewbiesDataSet = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSet();
             this.mokkiTableAdapter = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.mokkiTableAdapter();
             this.asiakasTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.asiakasTableAdapter();
             this.laskuTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.laskuTableAdapter();
             this.varausTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.varausTableAdapter();
             this.varauksen_palvelutTableAdapter1 = new Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters.varauksen_palvelutTableAdapter();
+            this.lbmokkiID = new System.Windows.Forms.Label();
             this.mokki_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,9 +73,9 @@
             this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).BeginInit();
-            this.pnlVarausLomake.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).BeginInit();
+            this.pnlVarausLomake.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbPuhNum
@@ -196,11 +197,22 @@
             this.henkilomaaraDataGridViewTextBoxColumn,
             this.varusteluDataGridViewTextBoxColumn});
             this.dgvMokki.DataSource = this.mokkiBindingSource;
-            this.dgvMokki.Location = new System.Drawing.Point(15, 28);
+            this.dgvMokki.Location = new System.Drawing.Point(12, 28);
             this.dgvMokki.Name = "dgvMokki";
             this.dgvMokki.Size = new System.Drawing.Size(644, 231);
             this.dgvMokki.TabIndex = 31;
             this.dgvMokki.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMokki_RowHeaderMouseClick);
+            
+            // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
+            // 
+            // villageNewbiesDataSet
+            // 
+            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
+            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpLopetus
             // 
@@ -229,6 +241,7 @@
             // 
             // pnlVarausLomake
             // 
+            this.pnlVarausLomake.Controls.Add(this.lbmokkiID);
             this.pnlVarausLomake.Controls.Add(this.lbLaskettuSumma);
             this.pnlVarausLomake.Controls.Add(this.lbLoppuSumma);
             this.pnlVarausLomake.Controls.Add(this.clbPalvelut);
@@ -357,16 +370,6 @@
             this.tbKuvaus.Size = new System.Drawing.Size(196, 106);
             this.tbKuvaus.TabIndex = 48;
             // 
-            // mokkiBindingSource
-            // 
-            this.mokkiBindingSource.DataMember = "mokki";
-            this.mokkiBindingSource.DataSource = this.villageNewbiesDataSet;
-            // 
-            // villageNewbiesDataSet
-            // 
-            this.villageNewbiesDataSet.DataSetName = "VillageNewbiesDataSet";
-            this.villageNewbiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // mokkiTableAdapter
             // 
             this.mokkiTableAdapter.ClearBeforeFill = true;
@@ -387,11 +390,20 @@
             // 
             this.varauksen_palvelutTableAdapter1.ClearBeforeFill = true;
             // 
+            // lbmokkiID
+            // 
+            this.lbmokkiID.AutoSize = true;
+            this.lbmokkiID.Location = new System.Drawing.Point(13, 605);
+            this.lbmokkiID.Name = "lbmokkiID";
+            this.lbmokkiID.Size = new System.Drawing.Size(0, 13);
+            this.lbmokkiID.TabIndex = 59;
+            // 
             // mokki_id
             // 
             this.mokki_id.DataPropertyName = "mokki_id";
             this.mokki_id.HeaderText = "Mökki ID";
             this.mokki_id.Name = "mokki_id";
+            this.mokki_id.Visible = false;
             // 
             // mokkinimiDataGridViewTextBoxColumn
             // 
@@ -439,10 +451,10 @@
             this.Text = "VarausLomake";
             this.Load += new System.EventHandler(this.VarausLomake_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMokki)).EndInit();
-            this.pnlVarausLomake.ResumeLayout(false);
-            this.pnlVarausLomake.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.villageNewbiesDataSet)).EndInit();
+            this.pnlVarausLomake.ResumeLayout(false);
+            this.pnlVarausLomake.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -490,5 +502,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lbmokkiID;
     }
 }

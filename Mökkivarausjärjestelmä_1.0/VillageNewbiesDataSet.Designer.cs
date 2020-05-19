@@ -7260,7 +7260,7 @@ namespace Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `varaus_id`, `asiakas_id`, `mokki_mokki_id`, `varattu_pvm`, `vahvistus_pvm" +
@@ -7276,6 +7276,11 @@ namespace Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("vahvistus_pvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vahvistus_pvm", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varattu_alkupvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_alkupvm", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varattu_loppupvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_loppupvm", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        mokki.mokki_id, varaus.varattu_pvm, varaus.vahvistus_pvm, varaus.va" +
+                "rattu_alkupvm, varaus.varattu_loppupvm\r\nFROM            varaus, mokki";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7297,6 +7302,17 @@ namespace Mökkivarausjärjestelmä_1._0.VillageNewbiesDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual VillageNewbiesDataSet.varausDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            VillageNewbiesDataSet.varausDataTable dataTable = new VillageNewbiesDataSet.varausDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual VillageNewbiesDataSet.varausDataTable VarausDataQuery() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             VillageNewbiesDataSet.varausDataTable dataTable = new VillageNewbiesDataSet.varausDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

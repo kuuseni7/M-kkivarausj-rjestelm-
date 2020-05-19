@@ -15,8 +15,7 @@ namespace Mökkivarausjärjestelmä_1._0
 {
     public partial class VarausLomake : Form
     {
-         
-
+        
         public VarausLomake()
         {
 
@@ -51,22 +50,12 @@ namespace Mökkivarausjärjestelmä_1._0
                 MessageBox.Show("Päättymis päivän täytyy olla tulevaisuudessa");
                 dtpLopetus.Value = dtpAloitus.Value;
             }
-           
-
             
-            
-            
-
-            /*if (dtpLopetus.Value < dtpAloitus.Value)
-            {
-                
-                dtpLopetus.Value = DateTime.Now;
-            }*/
         }
 
         private void VarausLomake_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'villageNewbiesDataSet.mokki' table. You can move, or remove it, as needed.
+            
             this.mokkiTableAdapter.Fill(this.villageNewbiesDataSet.mokki);
 
         }
@@ -76,14 +65,17 @@ namespace Mökkivarausjärjestelmä_1._0
             DataGridViewRow dgRow = dgvMokki.Rows[e.RowIndex];
             tbKuvaus.Text = dgRow.Cells[3].Value.ToString();
             tbVarustelu.Text = dgRow.Cells[5].Value.ToString();
+            
         }
         
         
 
         private void btnLuoVaraus_Click(object sender, EventArgs e /*DataGridViewCellEventArgs ev*/)
         {
-            luoAsiakas();
-            //luoVaraus(ev);
+            luoAsiakas();       
+            luoVaraus();
+
+
             luoLasku();
             
             //tulostaLasku();
@@ -128,7 +120,17 @@ namespace Mökkivarausjärjestelmä_1._0
             }
 
         }
-        private void luoVaraus(DataGridViewCellEventArgs e)
+        
+        public int haeMokinID(DataGridViewCellEventArgs e)
+        {
+            
+            DataGridViewRow dgRow = dgvMokki.Rows[e.RowIndex];
+            string soluArvo = dgRow.Cells[1].Value.ToString();
+            int mokki_id = Convert.ToInt32(soluArvo);
+            return mokki_id;
+        }
+        
+        public void luoVaraus()
         {
             
 
@@ -137,11 +139,14 @@ namespace Mökkivarausjärjestelmä_1._0
                 OdbcConnection connection = new OdbcConnection(@"Dsn=Village Newbies; uid=root");
                 connection.Open();
                 varausTableAdapter varaus = new varausTableAdapter();
-
-                DataGridViewRow dgRow = dgvMokki.Rows[e.RowIndex];
-                string soluArvo = dgRow.Cells[1].Value.ToString();
-                int mokki_id = Convert.ToInt32(soluArvo);//
-                varaus.InsertVaraus(mokki_id, dtpAloitus.Value, dtpAloitus.Value, dtpAloitus.Value, dtpLopetus.Value);
+                mokkiTableAdapter mokki = new mokkiTableAdapter();
+                varaus.VarausDataQuery();
+                DateTime varausPvm = dtpAloitus.Value;
+                DateTime vahvistusPvm = dtpAloitus.Value;
+                DateTime varattuAlkuPvm = dtpAloitus.Value;
+                DateTime varattuLoppuPvm = dtpAloitus.Value;
+                varaus.InsertVaraus(1, dtpAloitus.Value, dtpAloitus.Value, dtpAloitus.Value, dtpLopetus.Value);
+               // varaus.InsertVaraus(varaus.VarausDataQuery());
                 varaus.Update(villageNewbiesDataSet.varaus);
             }
             catch (Exception ex)
@@ -162,7 +167,7 @@ namespace Mökkivarausjärjestelmä_1._0
         {
             OdbcConnection connection = new OdbcConnection(@"Dsn=Village Newbies; uid=root");
             connection.Open();
-            loppuSummanLasku();
+            //loppuSummanLasku();
         }
         /*
         //laskun kirjoitus tiedostoon
@@ -189,19 +194,18 @@ namespace Mökkivarausjärjestelmä_1._0
 
         }*/
 
+        //// LASKU KADONNUT TIETOKANNASTA
         private void loppuSummanLasku()
         {
-            laskuTableAdapter lasku = new laskuTableAdapter();
-            lasku.InsertLasku(500, (decimal)0.24);
-            lasku.Update(villageNewbiesDataSet.lasku);
-            lasku.AlvQuery();
+            
+            
 
-            /*decimal summa = decimal.Parse(lbLaskettuSumma.Text);
+            decimal summa = decimal.Parse(lbLaskettuSumma.Text);
             decimal alv = (decimal.Parse(lbLaskettuSumma.Text) * (decimal)0.24);
             decimal mokinHinta = dgvMokki.SelectedRows.Count * 500;
 
             decimal loppuSumma = mokinHinta + summa + alv;
-            lbLaskettuSumma.Text = loppuSumma.ToString();*/
+            lbLaskettuSumma.Text = loppuSumma.ToString();
 
         }
 
@@ -210,7 +214,8 @@ namespace Mökkivarausjärjestelmä_1._0
             int lkm = clbPalvelut.CheckedItems.Count;
             int summa = (lkm * 50);
             lbLaskettuSumma.Text = summa.ToString();
-            
+
+            loppuSummanLasku();
         }
     }
 }
